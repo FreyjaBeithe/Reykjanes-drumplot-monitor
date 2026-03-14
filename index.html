@@ -41,7 +41,8 @@
         L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { maxZoom: 17 }).addTo(map);
         var sidebar = L.control.sidebar({ container: 'sidebar' }).addTo(map);
 
-        var stations = [{ id: "odf", name: "Ölkelduháls", lat: 63.94253, lon: -22.11324, url: "odf" },
+        var stations = [{id:"KLV", name:"Kleifarvatn", coords:[63.91447, -21.95979], url:"http://hraun.vedur.is/ja/drumplot/drumplot/klv_highpass_2.0.png"},
+            { id: "odf", name: "Ölkelduháls", lat: 63.94253, lon: -22.11324, url: "odf" },
             { id: "eld", name: "Eldey", lat: 63.74067, lon: -22.95803, url: "eld" },
             { id: "fad", name: "Fagradalsfjall", lat: 63.91668, lon: -22.28938, url: "fad" },
             { id: "grv", name: "Grindavík", lat: 63.85716, lon: -22.45583, url: "grv" },
