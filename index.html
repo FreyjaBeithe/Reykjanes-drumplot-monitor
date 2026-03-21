@@ -69,6 +69,15 @@
                 radius: 8, fillColor: "#ff0000", color: "#fff", weight: 2, fillOpacity: 1
             }).addTo(map);
 
+            L.marker([st.lat, st.lon], {
+    icon: L.divIcon({
+        className: 'transparent-label', 
+      html: `<div style="background:none; border:none; color:black; font-weight:bold; font-size:11px; white-space:nowrap; text-shadow: 1px 1px 0px white;">${st.id.toUpperCase()}</div>`,
+        iconAnchor: [-12, 8] 
+    }),
+    interactive: false
+}).addTo(map);
+
           
 
             marker.on('click', function() {
