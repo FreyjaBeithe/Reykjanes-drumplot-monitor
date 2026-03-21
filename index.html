@@ -69,14 +69,7 @@
                 radius: 8, fillColor: "#ff0000", color: "#fff", weight: 2, fillOpacity: 1
             }).addTo(map);
 
-            L.marker([st.lat, st.lon], {
-                icon: L.divIcon({
-                    className: 'station-label',
-                    html: st.id.toUpperCase(),
-                    iconAnchor: [-10, 10]
-                }),
-                interactive: false
-            }).addTo(map);
+          
 
             marker.on('click', function() {
                 var drumURL = `http://hraun.vedur.is/ja/drumplot/drumplot/${st.url}_highpass_2.0.png`;
