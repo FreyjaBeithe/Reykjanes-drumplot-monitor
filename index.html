@@ -8,8 +8,15 @@
     <style>
         body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #1a1a1a; }
         #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-        .station-label { background: rgba(255, 255, 255, 0.9); border: 1px solid #c62828; border-radius: 3px; 
-                         padding: 0px 4px; font-weight: bold; font-size: 11px; color: #333; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); }
+       .station-label {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #c62828; /* This keeps the text red */
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow: 1px 1px 0px #fff, -1px -1px 0px #fff, 1px -1px 0px #fff, -1px 1px 0px #fff; /* This adds a white "glow" so you can see it on the map */
+}
         .sidebar-header { background: #c62828 !important; }
         .btn { display: block; background: #c62828; color: white; padding: 14px; text-align: center; 
                text-decoration: none; border-radius: 5px; font-weight: bold; margin-bottom: 10px; transition: background 0.3s; }
