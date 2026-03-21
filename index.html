@@ -198,12 +198,12 @@
     // Create the marker using our new red dot
     const marker = L.marker([st.lat, st.lon], { icon: redDotIcon }).addTo(map);
 
-    // Add the 3-letter name ABOVE the dot
+   // Add the 3-letter name ABOVE the dot
     marker.bindTooltip(st.id.toUpperCase(), {
         permanent: true,
         direction: 'top',
         className: 'station-label',
-        offset: [0, -8] // Moves the name just slightly above the dot
+        offset: [0, 5] // This pulls the text down closer to the red dot
     });
 
     marker.stationName = st.name.toLowerCase();
