@@ -91,7 +91,7 @@
         var sidebar = L.control.sidebar({ container: 'sidebar' }).addTo(map);
         
 
-      sidebar.on('closing', function () {
+      sidebar.on('hide', function () {
     // 1. Find the search box
     const searchInput = document.getElementById('stationSearch');
     
@@ -216,6 +216,8 @@
 
     // Create the marker using our new red dot
     const marker = L.marker([st.lat, st.lon], { icon: redDotIcon }).addTo(map);
+     marker.stationName = st.name.toLowerCase();
+    marker.stationID = st.id.toLowerCase();  
 
    // Add the 3-letter name ABOVE the dot
     marker.bindTooltip(st.id.toUpperCase(), {
