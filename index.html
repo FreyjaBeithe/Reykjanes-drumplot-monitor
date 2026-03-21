@@ -18,13 +18,14 @@
     </style>
 </head>
 <body>
-
-    <div id="sidebar" class="leaflet-sidebar collapsed">
-        <div class="leaflet-sidebar-tabs"><ul role="tablist"><li><a href="#home" role="tab">📉</a></li></ul></div>
+<div id="sidebar" class="leaflet-sidebar collapsed">
+        <div class="leaflet-sidebar-tabs">
+            <ul role="tablist"><li><a href="#home" role="tab">📉</a></li></ul>
+        </div>
         <div class="leaflet-sidebar-content">
             <div class="leaflet-sidebar-pane" id="home">
                 <h2 class="leaflet-sidebar-header">Live Seismic Data<span class="leaflet-sidebar-close">×</span></h2>
-                <div id="station-content" style="padding:15px;">
+                <div style="padding:15px;">
                     <div style="margin-bottom: 20px;">
                         <input type="text" id="stationSearch" placeholder="Search station (e.g. LSK)..." 
                                style="width: 100%; padding: 10px; border-radius: 4px; border: 1px solid #ccc; background: #fff; color: #333;">
@@ -37,8 +38,60 @@
         </div>
     </div>
 
-    <div id="map"></div>
+    <div id="map"></div> ```
 
+---
+
+### 2. Why the map is blank (The likely culprit)
+In your provided code, you have:
+`document.getElementById('station-data').innerHTML = ...` 
+**BUT** in your HTML, you didn't have a div with the id `station-data`. When JavaScript can't find that ID, it stops everything. 
+
+### 3. Final JavaScript Logic (The "Safe" Version)
+To be 100% sure, paste this at the very bottom of your script (replacing your current `stations.forEach` and `searchInput` sections):
+
+```javascript
+const allMarkers = [];
+
+stations.forEach(st => {
+    const marker = L.marker([st.lat, st.lon]).addTo(map);
+    marker.stationName = st.name.toLowerCase();
+    marker.stationID = st.id.toLowerCase();
+    allMarkers.push(marker);
+
+    marker.on('click', function() {
+        sidebar.open('home');
+        var drumURL = `http://hraun.vedur.is/ja/drumplot/drumplot/${st.url}_highpass_2.0.png`;
+        
+        // This targets the specific data div so the search bar stays visible
+        const dataDiv = document.getElementById('station-data');
+        if(dataDiv) {
+            dataDiv.innerHTML = `
+                <div style="padding:10px;">
+                    <h2 style="color:#c62828;">${st.name} (${st.id.toUpperCase()})</h2>
+                    <div class="coords-text">LAT: ${st.lat} | LON: ${st.lon}</div>
+                    <img src="${drumURL}" style="width:100%; border-radius:4px; margin-top:15px;">
+                    <br><br>
+                    <a href="${drumURL}" target="_blank" class="btn">VIEW FULL IMAGE</a>
+                </div>
+            `;
+        }
+    });
+});
+
+// Search Logic
+const searchInput = document.getElementById('stationSearch');
+if (searchInput) {
+    searchInput.addEventListener('input', function(e) {
+        const term = e.target.value.toLowerCase();
+        allMarkers.forEach(marker => {
+            const isMatch = marker.stationName.includes(term) || marker.stationID.includes(term);
+            if (isMatch) { marker.addTo(map); } 
+            else { map.removeLayer(marker); }
+        });
+    });
+}
+    
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet-sidebar-v2@3.2.3/js/leaflet-sidebar.min.js"></script>
 
