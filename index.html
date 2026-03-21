@@ -205,28 +205,43 @@ if (searchInput) {
 
         const allMarkers = [];
 
-        stations.forEach(st => {
-            const marker = L.marker([st.lat, st.lon]).addTo(map);
-            marker.stationName = st.name.toLowerCase();
-            marker.stationID = st.id.toLowerCase();
-            allMarkers.push(marker);
+      stations.forEach(st => {
+    // 1. Create the blue marker
+    const marker = L.marker([st.lat, st.lon]).addTo(map);
 
-            marker.on('click', function() {
-                sidebar.open('home');
-                var drumURL = `http://hraun.vedur.is/ja/drumplot/drumplot/${st.url}_highpass_2.0.png`;
-                
-                document.getElementById('station-data').innerHTML = `
-                    <div style="padding:10px;">
-                        <h2 style="color:#c62828;">${st.name} (${st.id.toUpperCase()})</h2>
-                        <div class="coords-text">LAT: ${st.lat} | LON: ${st.lon}</div>
-                        <p style="margin:15px 0;">Live Drumplot (High-pass 2.0Hz):</p>
-                        <img src="${drumURL}" style="width:100%; border-radius:4px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-                        <br><br>
-                        <a href="${drumURL}" target="_blank" class="btn">VIEW FULL IMAGE</a>
-                    </div>
-                `;
-            });
-        });
+    // 2. Add the 3-letter station name as a permanent label
+    marker.bindTooltip(st.id.toUpperCase(), {
+        permanent: true,
+        direction: 'right',
+        className: 'station-label',
+        offset: [10, 0]
+    });
+
+    // 3. Attach search data
+    marker.stationName = st.name.toLowerCase();
+    marker.stationID = st.id.toLowerCase();
+    allMarkers.push(marker);
+
+    // 4. Click Event
+    marker.on('click', function() {
+        sidebar.open('home');
+        var drumURL = `http://hraun.vedur.is/ja/drumplot/drumplot/${st.url}_highpass_2.0.png`;
+        
+        const dataDiv = document.getElementById('station-data');
+        if(dataDiv) {
+            dataDiv.innerHTML = `
+                <div style="padding:10px;">
+                    <h2 style="color:#c62828;">${st.name} (${st.id.toUpperCase()})</h2>
+                    <div class="coords-text">LAT: ${st.lat} | LON: ${st.lon}</div>
+                    <p style="margin:15px 0;">Live Drumplot (High-pass 2.0Hz):</p>
+                    <img src="${drumURL}" style="width:100%; border-radius:4px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+                    <br><br>
+                    <a href="${drumURL}" target="_blank" class="btn">VIEW FULL IMAGE</a>
+                </div>
+            `;
+        }
+    });
+});
 
         const searchInput = document.getElementById('stationSearch');
         if (searchInput) {
