@@ -238,17 +238,19 @@ marker.on('click', function() {
     const drumURL = `http://hraun.vedur.is/ja/drumplot/drumplot/${st.url}_highpass_2.0.png?t=${new Date().getTime()}`;
     
     const dataDiv = document.getElementById('station-data');
-    if(dataDiv) {
+if(dataDiv) {
         dataDiv.innerHTML = `
             <div style="padding:10px;">
                 <h2 style="color:#c62828; margin-bottom:5px;">${st.name} (${st.id.toUpperCase()})</h2>
                 <div class="coords-text">LAT: ${st.lat} | LON: ${st.lon}</div>
-                <p style="margin:15px 0 5px 0; font-weight:bold;">Live Drumplot (2.0Hz):</p>
-                <img id="drum-img" src="${drumURL}" style="width:100%; border-radius:4px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+                
+                <p style="margin:15px 0; line-height: 1.4;">
+                    Select the button below to view the live 2.0Hz high-pass drumplot for this station.
+                </p>
+
                 <div style="margin-top:15px; display: flex; gap: 8px;">
-                 <button onclick="updateImage('${st.url}')" class="btn" style="flex:1;">🔄 REFRESH</button>
-    <a href="${drumURL}" target="_blank" class="btn" style="flex:1; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center;">DRUM PLOT</a>
-</div>   
+                    <button onclick="updateImage('${st.url}')" class="btn" style="flex:1;">🔄 REFRESH</button>
+                    <a href="${drumURL}" target="_blank" class="btn" style="flex:1; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center;">DRUM PLOT</a>
                 </div>
             </div>`;
     }
