@@ -1026,11 +1026,22 @@ function getEarthMovementArrow(nRate, eRate) {
     // eRate = 90-day east trend rate in mm/yr
     // Arrow shows horizontal direction only, not overall movement distance.
 
-    if (Math.abs(nRate) < 0.1 && Math.abs(eRate) < 0.1) {
+    if (
+        nRate === null || nRate === undefined ||
+        eRate === null || eRate === undefined ||
+        isNaN(Number(nRate)) || isNaN(Number(eRate))
+    ) {
         return "•";
     }
 
-    const angle = Math.atan2(nRate, eRate) * 180 / Math.PI;
+    const numericN = Number(nRate);
+    const numericE = Number(eRate);
+
+    if (Math.abs(numericN) < 0.1 && Math.abs(numericE) < 0.1) {
+        return "•";
+    }
+
+    const angle = Math.atan2(numericN, numericE) * 180 / Math.PI;
 
     if (angle >= -22.5 && angle < 22.5) return "→";
     if (angle >= 22.5 && angle < 67.5) return "↗";
