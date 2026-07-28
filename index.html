@@ -1019,7 +1019,29 @@ sidebar.on('closing', resetMap);
             { id: "vot", name: "Vöttur", lat: 64.27081, lon: -17.18254, url: "vot" },
             { id: "vsh", name: "Vestari Sauðahnjúkar", lat: 64.80775, lon: -15.72768, url: "vsh" }
      ];
-   
+   // ----------------------------------------------------------
+// Earth Movement GNSS trend helpers
+// These prepare the Earth Movement tab for real 90-day GNSS
+// trend-rate values in mm/yr.
+// ----------------------------------------------------------
+// getEarthMovementArrow(nRate, eRate)
+//   - Converts N/E trend rates into a horizontal arrow direction.
+//   - Arrow shows direction only, not overall movement distance.
+//
+// getEarthMovementVerticalStyle(upRate)
+//   - Converts Up trend rate into marker colour and vertical label.
+//   - Up positive = uplift / red.
+//   - Up negative = subsidence / blue.
+//   - Missing Up = neutral grey / N/A.
+//
+// formatEarthMovementRate(value)
+//   - Formats popup values with + / - signs and one decimal place.
+//   - Missing values show as N/A.
+//
+// getEarthMovementRates(station, index)
+//   - Current bridge function using demo values.
+//   - Later this will return real 90-day GNSS trend rates.
+// ----------------------------------------------------------
 function getEarthMovementArrow(nRate, eRate) {
     // Final version:
     // nRate = 90-day north trend rate in mm/yr
