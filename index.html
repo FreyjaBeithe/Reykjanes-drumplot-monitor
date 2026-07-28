@@ -1083,10 +1083,11 @@ const markerColor = isUplift ? "#ef5350" : "#1565c0";
   '<b>Lat:</b> ' + station.lat.toFixed(5) + '<br>' +
   '<b>Lon:</b> ' + station.lon.toFixed(5) + '<br><br>' +
 
-  '<b>Vertical:</b> ' + movementLabel + '<br>' +
-  '<b>N:</b> demo<br>' +
-  '<b>E:</b> demo<br>' +
-  '<b>Up:</b> demo' +
+'<b>Trend:</b> 90 days<br>' +
+'<b>Vertical:</b> ' + movementLabel + '<br>' +
+'<b>N:</b> demo mm/yr<br>' +
+'<b>E:</b> demo mm/yr<br>' +
+'<b>Up:</b> demo mm/yr' +
   '</div>';
 
 const marker = L.marker([station.lat, station.lon], {
