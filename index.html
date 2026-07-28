@@ -1123,8 +1123,9 @@ function getEarthMovementArrow(nRate, eRate) {
     return formattedValue;
 }
  function getEarthMovementDemoRates(index) {
-    // Temporary demo 90-day trend rates in mm/yr.
-    // Final version: replace this with real GNSS-derived N / E / Up rates.
+  // Temporary demo trend rates in mm/yr.
+// Current trend window: EARTH_MOVEMENT_TREND_DAYS.
+// Final version: replace this with real GNSS-derived N / E / Up rates.
 
     const demoHorizontalRates = [
         { n: 2.4, e: 28.7 },      // east
@@ -1160,7 +1161,7 @@ function getEarthMovementArrow(nRate, eRate) {
    
     function getEarthMovementRates(station, index) {
     // Temporary bridge function.
-    // First checks for real 90-day N / E / Up trend-rate values.
+    // First checks for real N / E / Up trend-rate values.
     // If no real values are available yet, falls back to demo rates.
 
     const stationCode = (station.url || station.id || "").toLowerCase();
