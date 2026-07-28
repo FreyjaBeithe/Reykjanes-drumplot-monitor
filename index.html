@@ -1090,18 +1090,18 @@ function getEarthMovementArrow(nRate, eRate) {
 // Temporary demo movement rates.
 // Final version: use real 90-day N / E / Up trend rates in mm/yr.
 const demoHorizontalRates = [
-    { n: 0, e: 20 },     // east
-    { n: 15, e: 15 },    // northeast
-    { n: 20, e: 0 },     // north
-    { n: 15, e: -15 },   // northwest
-    { n: 0, e: -20 },    // west
-    { n: -15, e: -15 },  // southwest
-    { n: -20, e: 0 },    // south
-    { n: -15, e: 15 }    // southeast
+    { n: 2.4, e: 28.7 },      // east
+    { n: 16.8, e: 14.2 },     // northeast
+    { n: 31.5, e: 1.9 },      // north
+    { n: 18.6, e: -22.4 },    // northwest
+    { n: -1.7, e: -36.8 },    // west
+    { n: -14.9, e: -18.3 },   // southwest
+    { n: -29.6, e: 2.1 },     // south
+    { n: -12.7, e: 21.5 }     // southeast
 ];
 
 const demoRate = demoHorizontalRates[index % demoHorizontalRates.length];
-const demoUpRate = index % 2 === 0 ? 120 : -120;
+const demoUpRate = index % 2 === 0 ? 118.4 : -96.7;
 
 const verticalStyle = getEarthMovementVerticalStyle(demoUpRate);
 
