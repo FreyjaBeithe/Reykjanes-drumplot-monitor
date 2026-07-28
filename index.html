@@ -1032,9 +1032,12 @@ function drawEarthMovementStations() {
             return station.type === "gps";
         })
         .forEach(function(station, index) {
-            // Temporary demo movement direction.
-            // Real uplift/subsidence values will be connected later.
-            const isUplift = index % 2 === 0;
+         
+// Temporary demo vertical movement.
+// Final version: use the 90-day Up trend rate.
+// Up positive = uplift / red triangle.
+// Up negative = subsidence / blue triangle.
+const isUplift = index % 2 === 0;
 const symbol = "▲";
 const movementLabel = isUplift ? "Demo uplift" : "Demo subsidence";
 const markerColor = isUplift ? "#ef5350" : "#1565c0";
@@ -1098,8 +1101,9 @@ const marker = L.marker([station.lat, station.lon], {
 marker.addTo(earthMovementLayer);
 
 // Temporary demo horizontal movement arrow.
-// Fixed length only: shows direction, not movement amount.
-            const demoDirections = [
+// Final version: direction will come from the 90-day N/E trend.
+// Arrow shows direction only, not overall movement distance.
+const demoDirections = [
                 "→", "↗", "↑", "↖", "←", "↙", "↓", "↘"
             ];
 
