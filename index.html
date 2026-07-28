@@ -1061,6 +1061,15 @@ function getEarthMovementArrow(nRate, eRate) {
         color: "#1565c0"
     };
 }  
+  function formatEarthMovementRate(value) {
+    // Formats 90-day trend rates for popup display.
+    // Positive values get a + sign so direction is clear.
+    if (value > 0) {
+        return "+" + value;
+    }
+
+    return value.toString();
+}  
     // ----------------------------------------------------------
 // ----------------------------------------------------------
 // Earth Movement GNSS station helper
@@ -1144,9 +1153,9 @@ const markerColor = verticalStyle.color;
 
 '<b>Trend:</b> 90 days<br>' +
 '<b>Vertical:</b> ' + movementLabel + '<br>' +
-'<b>N:</b> ' + demoRate.n + ' mm/yr<br>' +
-'<b>E:</b> ' + demoRate.e + ' mm/yr<br>' +
-'<b>Up:</b> ' + demoUpRate + ' mm/yr' +
+'<b>N:</b> ' + formatEarthMovementRate(demoRate.n) + ' mm/yr<br>' +
+'<b>E:</b> ' + formatEarthMovementRate(demoRate.e) + ' mm/yr<br>' +
+'<b>Up:</b> ' + formatEarthMovementRate(demoUpRate) + ' mm/yr' +
   '</div>';
 
 const marker = L.marker([station.lat, station.lon], {
