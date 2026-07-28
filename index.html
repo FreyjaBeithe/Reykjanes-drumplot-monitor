@@ -1148,11 +1148,10 @@ function getEarthMovementArrow(nRate, eRate) {
  const earthMovementRatesByStation = {
     // Future real-data format:
     // Station codes should be lowercase to match station.url / station.id.
-    //
-    // Example:
-    // seng: { n: 12.4, e: -3.1, up: 45.8 },
-    // gusk: { n: -2.7, e: 18.5, up: -12.3 }
-};
+     
+     seng: { n: 12.4, e: -3.1, up: 45.8 }
+     };
+   
     function getEarthMovementRates(station, index) {
     // Temporary bridge function.
     // First checks for real 90-day N / E / Up trend-rate values.
