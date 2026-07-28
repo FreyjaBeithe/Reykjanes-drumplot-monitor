@@ -1064,9 +1064,16 @@ function getEarthMovementArrow(nRate, eRate) {
  function formatEarthMovementRate(value) {
     // Formats 90-day trend rates for popup display.
     // Positive values get a + sign so direction is clear.
-    const formattedValue = Number(value).toFixed(1);
+    // Missing values show as N/A instead of breaking the popup.
 
-    if (value > 0) {
+    if (value === null || value === undefined || isNaN(Number(value))) {
+        return "N/A";
+    }
+
+    const numericValue = Number(value);
+    const formattedValue = numericValue.toFixed(1);
+
+    if (numericValue > 0) {
         return "+" + formattedValue;
     }
 
