@@ -1061,15 +1061,17 @@ function getEarthMovementArrow(nRate, eRate) {
         color: "#1565c0"
     };
 }  
-  function formatEarthMovementRate(value) {
+ function formatEarthMovementRate(value) {
     // Formats 90-day trend rates for popup display.
     // Positive values get a + sign so direction is clear.
+    const formattedValue = Number(value).toFixed(1);
+
     if (value > 0) {
-        return "+" + value;
+        return "+" + formattedValue;
     }
 
-    return value.toString();
-}  
+    return formattedValue;
+}
     // ----------------------------------------------------------
 // ----------------------------------------------------------
 // Earth Movement GNSS station helper
