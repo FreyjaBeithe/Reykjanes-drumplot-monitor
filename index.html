@@ -1350,8 +1350,14 @@ sidebar.on('content', function(e) {
 });
 
 // Clear sidebar content when it is closed completely
+// Clear sidebar content when it is closed completely
 sidebar.on('closing', function () {
-     map.removeLayer(quakeLayer);
+    map.removeLayer(quakeLayer);
+
+    if (earthMovementLayer) {
+        earthMovementLayer.clearLayers();
+    }
+
     const seismicContainer = document.getElementById('station-data');
     const gpsContainer = document.getElementById('gps-data');
     const gpsInput = document.getElementById('gpsSearch');
