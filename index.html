@@ -1076,11 +1076,22 @@ function getEarthMovementArrow(nRate, eRate) {
         })
         .forEach(function(station, index) {
          
-// Temporary demo vertical movement.
-// Final version: use the 90-day Up trend rate.
-// Up positive = uplift / red triangle.
-// Up negative = subsidence / blue triangle.
+// Temporary demo movement rates.
+// Final version: use real 90-day N / E / Up trend rates in mm/yr.
+const demoHorizontalRates = [
+    { n: 0, e: 20 },     // east
+    { n: 15, e: 15 },    // northeast
+    { n: 20, e: 0 },     // north
+    { n: 15, e: -15 },   // northwest
+    { n: 0, e: -20 },    // west
+    { n: -15, e: -15 },  // southwest
+    { n: -20, e: 0 },    // south
+    { n: -15, e: 15 }    // southeast
+];
+
+const demoRate = demoHorizontalRates[index % demoHorizontalRates.length];
 const demoUpRate = index % 2 === 0 ? 120 : -120;
+
 const verticalStyle = getEarthMovementVerticalStyle(demoUpRate);
 
 const symbol = "▲";
@@ -1133,9 +1144,9 @@ const markerColor = verticalStyle.color;
 
 '<b>Trend:</b> 90 days<br>' +
 '<b>Vertical:</b> ' + movementLabel + '<br>' +
-'<b>N:</b> demo mm/yr<br>' +
-'<b>E:</b> demo mm/yr<br>' +
-'<b>Up:</b> demo mm/yr' +
+'<b>N:</b> ' + demoRate.n + ' mm/yr<br>' +
+'<b>E:</b> ' + demoRate.e + ' mm/yr<br>' +
+'<b>Up:</b> ' + demoUpRate + ' mm/yr' +
   '</div>';
 
 const marker = L.marker([station.lat, station.lon], {
@@ -1148,18 +1159,7 @@ marker.addTo(earthMovementLayer);
 // Temporary demo horizontal movement arrow.
 // Final version: direction will come from the 90-day N/E trend.
 // Arrow shows direction only, not overall movement distance.
-const demoHorizontalRates = [
-    { n: 0, e: 20 },     // east
-    { n: 15, e: 15 },    // northeast
-    { n: 20, e: 0 },     // north
-    { n: 15, e: -15 },   // northwest
-    { n: 0, e: -20 },    // west
-    { n: -15, e: -15 },  // southwest
-    { n: -20, e: 0 },    // south
-    { n: -15, e: 15 }    // southeast
-];
 
-const demoRate = demoHorizontalRates[index % demoHorizontalRates.length];
 const arrowSymbol = getEarthMovementArrow(demoRate.n, demoRate.e);
 
             const arrowIconHtml =
