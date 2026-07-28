@@ -1145,7 +1145,9 @@ function getEarthMovementArrow(nRate, eRate) {
         up: index % 2 === 0 ? 118.4 : -96.7
     };
 }   
-const earthMovementRatesByStation = {
+    const EARTH_MOVEMENT_TREND_DAYS = 90;
+    
+    const earthMovementRatesByStation = {
     // Future real-data format:
     // Station codes should be lowercase to match station.url / station.id.
     //
@@ -1243,7 +1245,7 @@ const markerColor = verticalStyle.color;
   '<b>Lat:</b> ' + station.lat.toFixed(5) + '<br>' +
   '<b>Lon:</b> ' + station.lon.toFixed(5) + '<br>' +
 
-'<b>Trend:</b> 90 days<br>' +
+'<b>Trend:</b> ' + EARTH_MOVEMENT_TREND_DAYS + ' days<br>' +
 '<b>Vertical:</b> ' + movementLabel + '<br>' +
 '<b>N:</b> ' + formatEarthMovementRate(movementRate.n) + ' mm/yr<br>' +
 '<b>E:</b> ' + formatEarthMovementRate(movementRate.e) + ' mm/yr<br>' +
