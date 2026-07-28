@@ -1054,13 +1054,23 @@ function getEarthMovementArrow(nRate, eRate) {
 
     return "•";
 }    
-  function getEarthMovementVerticalStyle(upRate) {
+ function getEarthMovementVerticalStyle(upRate) {
     // Final version:
     // upRate = 90-day Up trend rate in mm/yr.
     // Up positive = uplift / red triangle.
     // Up negative = subsidence / blue triangle.
+    // Missing values use a neutral style.
 
-    if (upRate >= 0) {
+    if (upRate === null || upRate === undefined || isNaN(Number(upRate))) {
+        return {
+            label: "N/A",
+            color: "#9e9e9e"
+        };
+    }
+
+    const numericUp = Number(upRate);
+
+    if (numericUp >= 0) {
         return {
             label: "uplift",
             color: "#ef5350"
@@ -1071,7 +1081,7 @@ function getEarthMovementArrow(nRate, eRate) {
         label: "subsidence",
         color: "#1565c0"
     };
-}  
+}
  function formatEarthMovementRate(value) {
     // Formats 90-day trend rates for popup display.
     // Positive values get a + sign so direction is clear.
