@@ -1145,11 +1145,24 @@ function getEarthMovementArrow(nRate, eRate) {
         up: index % 2 === 0 ? 118.4 : -96.7
     };
 }   
-  function getEarthMovementRates(station, index) {
+ const earthMovementRatesByStation = {
+    // Future real-data format:
+    // Station codes should be lowercase to match station.url / station.id.
+    //
+    // Example:
+    // seng: { n: 12.4, e: -3.1, up: 45.8 },
+    // gusk: { n: -2.7, e: 18.5, up: -12.3 }
+};
+    function getEarthMovementRates(station, index) {
     // Temporary bridge function.
-    // Current version returns demo 90-day N / E / Up trend rates.
-    // Final version will return real GNSS-derived 90-day trend rates for this station.
-    // If real data is missing later, this function should return null.
+    // First checks for real 90-day N / E / Up trend-rate values.
+    // If no real values are available yet, falls back to demo rates.
+
+    const stationCode = (station.url || station.id || "").toLowerCase();
+
+    if (earthMovementRatesByStation[stationCode]) {
+        return earthMovementRatesByStation[stationCode];
+    }
 
     return getEarthMovementDemoRates(index);
 }
