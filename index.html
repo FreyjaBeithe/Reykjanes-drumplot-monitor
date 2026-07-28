@@ -1145,11 +1145,16 @@ function getEarthMovementArrow(nRate, eRate) {
         up: index % 2 === 0 ? 118.4 : -96.7
     };
 }   
- const earthMovementRatesByStation = {
+const earthMovementRatesByStation = {
     // Future real-data format:
     // Station codes should be lowercase to match station.url / station.id.
+    //
+    // IMPORTANT:
+    // SENG below is a temporary test placeholder only.
+    // It proves the real-data path works, but it is not real GNSS data yet.
+
     seng: { n: 12.4, e: -3.1, up: 45.8 }
-     };
+};
    
     function getEarthMovementRates(station, index) {
     // Temporary bridge function.
