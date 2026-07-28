@@ -1112,11 +1112,10 @@ function getEarthMovementArrow(nRate, eRate) {
          
 // Temporary demo movement rates.
 // Final version: use real 90-day N / E / Up trend rates in mm/yr.
-const demoRate = getEarthMovementDemoRates(index);
-const demoUpRate = demoRate.up;
+const movementRate = getEarthMovementDemoRates(index);
+const upRate = movementRate.up;
 
-const verticalStyle = getEarthMovementVerticalStyle(demoUpRate);
-
+const verticalStyle = getEarthMovementVerticalStyle(upRate);
 const symbol = "▲";
 const movementLabel = verticalStyle.label;
 const markerColor = verticalStyle.color;
@@ -1167,9 +1166,9 @@ const markerColor = verticalStyle.color;
 
 '<b>Trend:</b> 90 days<br>' +
 '<b>Vertical:</b> ' + movementLabel + '<br>' +
-'<b>N:</b> ' + formatEarthMovementRate(demoRate.n) + ' mm/yr<br>' +
-'<b>E:</b> ' + formatEarthMovementRate(demoRate.e) + ' mm/yr<br>' +
-'<b>Up:</b> ' + formatEarthMovementRate(demoUpRate) + ' mm/yr' +
+'<b>N:</b> ' + formatEarthMovementRate(movementRate.n) + ' mm/yr<br>' +
+'<b>E:</b> ' + formatEarthMovementRate(movementRate.e) + ' mm/yr<br>' +
+'<b>Up:</b> ' + formatEarthMovementRate(upRate) + ' mm/yr' +
   '</div>';
 
 const marker = L.marker([station.lat, station.lon], {
@@ -1183,7 +1182,7 @@ marker.addTo(earthMovementLayer);
 // Final version: direction will come from the 90-day N/E trend.
 // Arrow shows direction only, not overall movement distance.
 
-const arrowSymbol = getEarthMovementArrow(demoRate.n, demoRate.e);
+const arrowSymbol = getEarthMovementArrow(movementRate.n, movementRate.e);
 
             const arrowIconHtml =
                 '<div style="' +
