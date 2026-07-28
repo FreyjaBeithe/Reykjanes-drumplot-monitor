@@ -1019,12 +1019,37 @@ sidebar.on('closing', resetMap);
             { id: "vot", name: "Vöttur", lat: 64.27081, lon: -17.18254, url: "vot" },
             { id: "vsh", name: "Vestari Sauðahnjúkar", lat: 64.80775, lon: -15.72768, url: "vsh" }
      ];
+   
+function getEarthMovementArrow(nRate, eRate) {
+    // Final version:
+    // nRate = 90-day north trend rate in mm/yr
+    // eRate = 90-day east trend rate in mm/yr
+    // Arrow shows horizontal direction only, not overall movement distance.
+
+    if (Math.abs(nRate) < 0.1 && Math.abs(eRate) < 0.1) {
+        return "•";
+    }
+
+    const angle = Math.atan2(nRate, eRate) * 180 / Math.PI;
+
+    if (angle >= -22.5 && angle < 22.5) return "→";
+    if (angle >= 22.5 && angle < 67.5) return "↗";
+    if (angle >= 67.5 && angle < 112.5) return "↑";
+    if (angle >= 112.5 && angle < 157.5) return "↖";
+    if (angle >= 157.5 || angle < -157.5) return "←";
+    if (angle >= -157.5 && angle < -112.5) return "↙";
+    if (angle >= -112.5 && angle < -67.5) return "↓";
+    if (angle >= -67.5 && angle < -22.5) return "↘";
+
+    return "•";
+}    
     // ----------------------------------------------------------
 // ----------------------------------------------------------
 // Earth Movement GNSS station helper
 // Draws GPS/GNSS stations onto the Earth Movement tab layer
 // ----------------------------------------------------------
-function drawEarthMovementStations() {
+
+    function drawEarthMovementStations() {
     earthMovementLayer.clearLayers();
 
     stations
@@ -1103,11 +1128,19 @@ marker.addTo(earthMovementLayer);
 // Temporary demo horizontal movement arrow.
 // Final version: direction will come from the 90-day N/E trend.
 // Arrow shows direction only, not overall movement distance.
-const demoDirections = [
-                "→", "↗", "↑", "↖", "←", "↙", "↓", "↘"
-            ];
+const demoHorizontalRates = [
+    { n: 0, e: 20 },     // east
+    { n: 15, e: 15 },    // northeast
+    { n: 20, e: 0 },     // north
+    { n: 15, e: -15 },   // northwest
+    { n: 0, e: -20 },    // west
+    { n: -15, e: -15 },  // southwest
+    { n: -20, e: 0 },    // south
+    { n: -15, e: 15 }    // southeast
+];
 
-            const arrowSymbol = demoDirections[index % demoDirections.length];
+const demoRate = demoHorizontalRates[index % demoHorizontalRates.length];
+const arrowSymbol = getEarthMovementArrow(demoRate.n, demoRate.e);
 
             const arrowIconHtml =
                 '<div style="' +
