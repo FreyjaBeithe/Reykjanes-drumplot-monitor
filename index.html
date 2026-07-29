@@ -1256,7 +1256,21 @@ function parseEarthMovementNeuText(text) {
         return [];
     }
 }
-  
+    // Planned earth-movement-rates.json format:
+//
+// {
+//   "generatedAt": "2026-07-29T09:00:00Z",
+//   "source": "IMO/Vedur GNSS .NEU files",
+//   "trendDays": 90,
+//   "rates": {
+//     "seng": { "n": 12.4, "e": -3.1, "up": 45.8 },
+//     "gusk": { "n": -2.7, "e": 18.5, "up": -12.3 }
+//   }
+// }
+//
+// Values are 90-day trend rates in mm/yr.
+// Station codes are lowercase.
+   
     const earthMovementRatesByStation = {
     // Future real-data format:
     // Station codes should be lowercase to match station.url / station.id.
