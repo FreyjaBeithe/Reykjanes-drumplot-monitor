@@ -9,7 +9,7 @@ const stationCodes = [
     "seng",
     "gusk",
     "gjog",
-    "afst"
+    "afst",
     "moha"
 ];
 
