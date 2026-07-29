@@ -1246,9 +1246,7 @@ function parseEarthMovementNeuText(text) {
         return [];
     }
 }
-    fetchEarthMovementNeuPoints("seng").then(function (points) {
-    console.log("SENG parsed GNSS points:", points.length, points.slice(-3));
-});
+  
     const earthMovementRatesByStation = {
     // Future real-data format:
     // Station codes should be lowercase to match station.url / station.id.
