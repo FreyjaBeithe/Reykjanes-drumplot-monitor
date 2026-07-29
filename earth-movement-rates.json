@@ -1,12 +1,15 @@
 {
-  "generatedAt": "2026-07-29T13:32:45.250Z",
-  "source": "Temporary VolcanoWatchers test data - not real GNSS data",
+  "generatedAt": "2026-07-29T14:12:17.748Z",
+  "source": "IMO/Vedur GNSS .NEU files via VolcanoWatchers GitHub Action",
   "trendDays": 90,
   "rates": {
     "seng": {
-      "n": 12.4,
-      "e": -3.1,
-      "up": 45.8
+      "n": 25.2,
+      "e": 61.3,
+      "up": 173.5,
+      "startYear": 2026.3247,
+      "endYear": 2026.5712,
+      "daysApprox": 90
     }
   }
 }
