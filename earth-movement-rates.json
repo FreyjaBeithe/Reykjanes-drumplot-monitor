@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-07-29T12:20:00Z",
+  "generatedAt": "2026-07-29T13:25:00Z",
   "source": "Temporary VolcanoWatchers test data - not real GNSS data",
   "trendDays": 90,
   "rates": {
     "seng": {
-      "n": 12.4,
-      "e": -3.1,
-      "up": 45.8
+      "n": -20.0,
+      "e": 20.0,
+      "up": -35.0
     }
   }
 }
