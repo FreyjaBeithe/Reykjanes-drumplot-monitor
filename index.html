@@ -1220,7 +1220,35 @@ function parseEarthMovementNeuText(text) {
 
     return points;
 }
-   
+   async function fetchEarthMovementNeuPoints(stationCode) {
+    // Fetches and parses one IMO/Vedur .NEU station file.
+    // Returns an array of parsed N / E / Up points.
+    // Does not update the map directly.
+
+    const url = getEarthMovementDataUrl(stationCode);
+
+    if (!url) {
+        return [];
+    }
+
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            console.warn("GNSS fetch failed for", stationCode, response.status);
+            return [];
+        }
+
+        const text = await response.text();
+        return parseEarthMovementNeuText(text);
+    } catch (error) {
+        console.warn("GNSS fetch error for", stationCode, error);
+        return [];
+    }
+}
+    fetchEarthMovementNeuPoints("seng").then(function (points) {
+    console.log("SENG parsed GNSS points:", points.length, points.slice(-3));
+});
     const earthMovementRatesByStation = {
     // Future real-data format:
     // Station codes should be lowercase to match station.url / station.id.
