@@ -101,6 +101,57 @@ async function fetchGnssNeuPoints(stationCode) {
     }
 }
 
+function calculateTrendRate(points, days) {
+    // Calculates N / E / Up trend rates over the requested window.
+    // Input displacement values are in mm.
+    // Output trend rates are annualised mm/yr.
+
+    if (!points || points.length < 2) {
+        return null;
+    }
+
+    const sortedPoints = points.slice().sort(function (a, b) {
+        return a.year - b.year;
+    });
+
+    const latestPoint = sortedPoints[sortedPoints.length - 1];
+    const targetStartYear = latestPoint.year - (days / 365.25);
+
+    let startPoint = null;
+
+    for (let i = sortedPoints.length - 1; i >= 0; i--) {
+        if (sortedPoints[i].year <= targetStartYear) {
+            startPoint = sortedPoints[i];
+            break;
+        }
+    }
+
+    if (!startPoint) {
+        return null;
+    }
+
+    const yearSpan = latestPoint.year - startPoint.year;
+
+    if (yearSpan <= 0) {
+        return null;
+    }
+
+    return {
+        n: (latestPoint.n - startPoint.n) / yearSpan,
+        e: (latestPoint.e - startPoint.e) / yearSpan,
+        up: (latestPoint.up - startPoint.up) / yearSpan,
+        startYear: startPoint.year,
+        endYear: latestPoint.year,
+        daysApprox: yearSpan * 365.25
+    };
+}
+
+function roundRate(value) {
+    // Rounds trend rates to one decimal place for the JSON file.
+
+    return Math.round(value * 10) / 10;
+}
+
 async function main() {
     const sengPoints = await fetchGnssNeuPoints("seng");
 
@@ -108,6 +159,21 @@ async function main() {
 
     if (sengPoints.length > 0) {
         console.log("SENG latest parsed point:", sengPoints[sengPoints.length - 1]);
+    }
+
+    const sengTrend = calculateTrendRate(sengPoints, trendDays);
+
+    if (sengTrend) {
+        console.log("SENG calculated 90-day trend:", {
+            n: roundRate(sengTrend.n),
+            e: roundRate(sengTrend.e),
+            up: roundRate(sengTrend.up),
+            daysApprox: roundRate(sengTrend.daysApprox),
+            startYear: sengTrend.startYear,
+            endYear: sengTrend.endYear
+        });
+    } else {
+        console.warn("SENG calculated 90-day trend: unavailable");
     }
 
     // Temporary output while we build the generator.
