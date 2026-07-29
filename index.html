@@ -1300,11 +1300,11 @@ async function loadEarthMovementRatesJson() {
 // Station codes are lowercase.
 
 let earthMovementRatesByStation = {
-    // Future real-data format:
+    // Fallback/test format:
     // Station codes should be lowercase to match station.url / station.id.
     //
     // IMPORTANT:
-    // SENG below is a temporary test placeholder only.
+    // SENG below is a temporary fallback placeholder only.
     // It proves the real-data path works, but it is not real GNSS data yet.
 
     seng: { n: 12.4, e: -3.1, up: 45.8 }
@@ -1323,10 +1323,22 @@ function applyEarthMovementRatesJson(data) {
     return true;
 }
 
+async function initialiseEarthMovementRates() {
+    // Loads local Earth Movement JSON data once when the page starts.
+    // If loading fails, the map keeps using the fallback/test values above.
+
+    const data = await loadEarthMovementRatesJson();
+
+    if (applyEarthMovementRatesJson(data)) {
+        console.log("Earth Movement rates JSON loaded:", data.generatedAt || "no timestamp");
+    }
+}
+
+initialiseEarthMovementRates();
+
 function getEarthMovementRates(station, index) {
-    // Temporary bridge function.
-    // First checks for real N / E / Up trend-rate values.
-    // If no real values are available yet, falls back to demo rates.
+    // First checks loaded/local N / E / Up trend-rate values.
+    // If no value is available for this station, falls back to demo rates.
 
     const stationCode = (station.url || station.id || "").toLowerCase();
 
