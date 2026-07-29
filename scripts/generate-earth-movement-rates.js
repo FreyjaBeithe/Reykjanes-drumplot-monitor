@@ -3,6 +3,12 @@ const fs = require("fs");
 const outputPath = "earth-movement-rates.json";
 const trendDays = 90;
 
+// Start with one real station.
+// Later we will add more station codes here gradually.
+const stationCodes = [
+    "seng"
+];
+
 function getGnssDataUrl(stationCode) {
     // Builds the expected IMO/Vedur GNSS .NEU data URL for a station.
     // Example station code: SENG -> SENG-plate.NEU
@@ -152,38 +158,47 @@ function roundRate(value) {
     return Math.round(value * 10) / 10;
 }
 
+async function calculateStationRate(stationCode) {
+    // Fetches and calculates one station's 90-day trend rate.
+
+    const points = await fetchGnssNeuPoints(stationCode);
+
+    console.log(stationCode.toUpperCase() + " parsed GNSS points:", points.length);
+
+    if (points.length > 0) {
+        console.log(stationCode.toUpperCase() + " latest parsed point:", points[points.length - 1]);
+    }
+
+    const trend = calculateTrendRate(points, trendDays);
+
+    if (!trend) {
+        console.warn(stationCode.toUpperCase() + " calculated 90-day trend: unavailable");
+        return null;
+    }
+
+    const rate = {
+        n: roundRate(trend.n),
+        e: roundRate(trend.e),
+        up: roundRate(trend.up),
+        startYear: trend.startYear,
+        endYear: trend.endYear,
+        daysApprox: roundRate(trend.daysApprox)
+    };
+
+    console.log(stationCode.toUpperCase() + " calculated 90-day trend:", rate);
+
+    return rate;
+}
+
 async function main() {
-    const sengPoints = await fetchGnssNeuPoints("seng");
-
-    console.log("SENG parsed GNSS points:", sengPoints.length);
-
-    if (sengPoints.length > 0) {
-        console.log("SENG latest parsed point:", sengPoints[sengPoints.length - 1]);
-    }
-
-    const sengTrend = calculateTrendRate(sengPoints, trendDays);
-
-    let sengRate = null;
-
-    if (sengTrend) {
-        sengRate = {
-            n: roundRate(sengTrend.n),
-            e: roundRate(sengTrend.e),
-            up: roundRate(sengTrend.up),
-            startYear: sengTrend.startYear,
-            endYear: sengTrend.endYear,
-            daysApprox: roundRate(sengTrend.daysApprox)
-        };
-
-        console.log("SENG calculated 90-day trend:", sengRate);
-    } else {
-        console.warn("SENG calculated 90-day trend: unavailable");
-    }
-
     const rates = {};
 
-    if (sengRate) {
-        rates.seng = sengRate;
+    for (const stationCode of stationCodes) {
+        const rate = await calculateStationRate(stationCode);
+
+        if (rate) {
+            rates[stationCode.toLowerCase()] = rate;
+        }
     }
 
     const earthMovementRates = {
@@ -200,7 +215,7 @@ async function main() {
 
     console.log("Earth Movement rates JSON written to", outputPath);
     console.log("Generated at", earthMovementRates.generatedAt);
-    console.log("SENG GNSS URL:", getGnssDataUrl("seng"));
+    console.log("Stations written:", Object.keys(rates).join(", "));
 }
 
 main();
