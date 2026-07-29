@@ -8,9 +8,9 @@ const trendDays = 90;
 const stationCodes = [
     "seng",
     "gusk",
-    "vsh",
     "gjog",
     "afst"
+    "moha"
 ];
 
 function getGnssDataUrl(stationCode) {
