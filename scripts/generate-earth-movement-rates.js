@@ -163,32 +163,34 @@ async function main() {
 
     const sengTrend = calculateTrendRate(sengPoints, trendDays);
 
+    let sengRate = null;
+
     if (sengTrend) {
-        console.log("SENG calculated 90-day trend:", {
+        sengRate = {
             n: roundRate(sengTrend.n),
             e: roundRate(sengTrend.e),
             up: roundRate(sengTrend.up),
-            daysApprox: roundRate(sengTrend.daysApprox),
             startYear: sengTrend.startYear,
-            endYear: sengTrend.endYear
-        });
+            endYear: sengTrend.endYear,
+            daysApprox: roundRate(sengTrend.daysApprox)
+        };
+
+        console.log("SENG calculated 90-day trend:", sengRate);
     } else {
         console.warn("SENG calculated 90-day trend: unavailable");
     }
 
-    // Temporary output while we build the generator.
-    // Real GNSS values will replace this in a later step.
+    const rates = {};
+
+    if (sengRate) {
+        rates.seng = sengRate;
+    }
+
     const earthMovementRates = {
         generatedAt: new Date().toISOString(),
-        source: "Temporary VolcanoWatchers test data - not real GNSS data",
+        source: "IMO/Vedur GNSS .NEU files via VolcanoWatchers GitHub Action",
         trendDays: trendDays,
-        rates: {
-            seng: {
-                n: 12.4,
-                e: -3.1,
-                up: 45.8
-            }
-        }
+        rates: rates
     };
 
     fs.writeFileSync(
@@ -198,7 +200,7 @@ async function main() {
 
     console.log("Earth Movement rates JSON written to", outputPath);
     console.log("Generated at", earthMovementRates.generatedAt);
-    console.log("Future SENG GNSS URL:", getGnssDataUrl("seng"));
+    console.log("SENG GNSS URL:", getGnssDataUrl("seng"));
 }
 
 main();
