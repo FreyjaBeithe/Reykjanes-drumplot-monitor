@@ -7,8 +7,12 @@ const trendDays = 90;
 // Later we will add more station codes here gradually.
 const stationCodes = [
     "seng",
-    "gusk"
+    "gusk",
+    "vsh",
+    "gjog",
+    "afst"
 ];
+
 function getGnssDataUrl(stationCode) {
     // Builds the expected IMO/Vedur GNSS .NEU data URL for a station.
     // Example station code: SENG -> SENG-plate.NEU
