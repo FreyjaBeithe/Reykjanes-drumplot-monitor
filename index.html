@@ -1146,12 +1146,25 @@ function getEarthMovementArrow(nRate, eRate) {
         up: index % 2 === 0 ? 118.4 : -96.7
     };
 }   
-    const EARTH_MOVEMENT_TREND_DAYS = 90;
-    function getEarthMovementDataUrl(stationCode) {
+const EARTH_MOVEMENT_TREND_DAYS = 90;
+
+function getEarthMovementDataUrl(stationCode) {
     // Builds the expected IMO/Vedur GNSS data URL for a station.
     // Uses fractional-year .NEU files, which contain N / E / Up time-series data.
     // Example station code: SENG -> SENG-plate.NEU
-    function parseEarthMovementNeuLine(line) {
+
+    const code = String(stationCode || "").trim().toUpperCase();
+
+    if (!code) {
+        return null;
+    }
+
+    return "https://www.vedur.is/gogn/gps/timeseries/timeseries-fractional/" +
+        code +
+        "-plate.NEU";
+}
+
+function parseEarthMovementNeuLine(line) {
     // Parses one IMO/Vedur .NEU data line.
     // Format:
     // yyyy.dddd dN DN dE DE dU DU
@@ -1189,15 +1202,23 @@ function getEarthMovementArrow(nRate, eRate) {
         up: up
     };
 }
-    const code = String(stationCode || "").trim().toUpperCase();
 
-    if (!code) {
-        return null;
-    }
+function parseEarthMovementNeuText(text) {
+    // Parses a full IMO/Vedur .NEU text file.
+    // Keeps only valid data rows and ignores headers/comments/blank lines.
 
-    return "https://www.vedur.is/gogn/gps/timeseries/timeseries-fractional/" +
-        code +
-        "-plate.NEU";
+    const lines = String(text || "").split(/\r?\n/);
+    const points = [];
+
+    lines.forEach(function (line) {
+        const point = parseEarthMovementNeuLine(line);
+
+        if (point) {
+            points.push(point);
+        }
+    });
+
+    return points;
 }
    
     const earthMovementRatesByStation = {
