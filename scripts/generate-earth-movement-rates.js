@@ -3,12 +3,12 @@ const fs = require("fs");
 const outputPath = "earth-movement-rates.json";
 const trendDays = 90;
 
-// Start with one real station.
+// Start with a small real station test set.
 // Later we will add more station codes here gradually.
 const stationCodes = [
-    "seng"
+    "seng",
+    "gusk"
 ];
-
 function getGnssDataUrl(stationCode) {
     // Builds the expected IMO/Vedur GNSS .NEU data URL for a station.
     // Example station code: SENG -> SENG-plate.NEU
