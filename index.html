@@ -1151,7 +1151,44 @@ function getEarthMovementArrow(nRate, eRate) {
     // Builds the expected IMO/Vedur GNSS data URL for a station.
     // Uses fractional-year .NEU files, which contain N / E / Up time-series data.
     // Example station code: SENG -> SENG-plate.NEU
+    function parseEarthMovementNeuLine(line) {
+    // Parses one IMO/Vedur .NEU data line.
+    // Format:
+    // yyyy.dddd dN DN dE DE dU DU
+    //
+    // Returns:
+    // year = fractional year
+    // n = north displacement in mm
+    // e = east displacement in mm
+    // up = vertical displacement in mm
 
+    const parts = String(line || "").trim().split(/\s+/);
+
+    if (parts.length < 7) {
+        return null;
+    }
+
+    const year = Number(parts[0]);
+    const n = Number(parts[1]);
+    const e = Number(parts[3]);
+    const up = Number(parts[5]);
+
+    if (
+        isNaN(year) ||
+        isNaN(n) ||
+        isNaN(e) ||
+        isNaN(up)
+    ) {
+        return null;
+    }
+
+    return {
+        year: year,
+        n: n,
+        e: e,
+        up: up
+    };
+}
     const code = String(stationCode || "").trim().toUpperCase();
 
     if (!code) {
