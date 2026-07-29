@@ -75,26 +75,64 @@ function parseNeuText(text) {
     return points;
 }
 
-// Temporary output while we build the generator.
-// Real GNSS values will replace this in a later step.
-const earthMovementRates = {
-    generatedAt: new Date().toISOString(),
-    source: "Temporary VolcanoWatchers test data - not real GNSS data",
-    trendDays: trendDays,
-    rates: {
-        seng: {
-            n: 12.4,
-            e: -3.1,
-            up: 45.8
-        }
+async function fetchGnssNeuPoints(stationCode) {
+    // Fetches one IMO/Vedur .NEU station file from GitHub Actions.
+    // This server-side fetch avoids browser CORS restrictions.
+
+    const url = getGnssDataUrl(stationCode);
+
+    if (!url) {
+        return [];
     }
-};
 
-fs.writeFileSync(
-    outputPath,
-    JSON.stringify(earthMovementRates, null, 2) + "\n"
-);
+    try {
+        const response = await fetch(url);
 
-console.log("Earth Movement rates JSON written to", outputPath);
-console.log("Generated at", earthMovementRates.generatedAt);
-console.log("Future SENG GNSS URL:", getGnssDataUrl("seng"));
+        if (!response.ok) {
+            console.warn("GNSS fetch failed for", stationCode, response.status);
+            return [];
+        }
+
+        const text = await response.text();
+        return parseNeuText(text);
+    } catch (error) {
+        console.warn("GNSS fetch error for", stationCode, error);
+        return [];
+    }
+}
+
+async function main() {
+    const sengPoints = await fetchGnssNeuPoints("seng");
+
+    console.log("SENG parsed GNSS points:", sengPoints.length);
+
+    if (sengPoints.length > 0) {
+        console.log("SENG latest parsed point:", sengPoints[sengPoints.length - 1]);
+    }
+
+    // Temporary output while we build the generator.
+    // Real GNSS values will replace this in a later step.
+    const earthMovementRates = {
+        generatedAt: new Date().toISOString(),
+        source: "Temporary VolcanoWatchers test data - not real GNSS data",
+        trendDays: trendDays,
+        rates: {
+            seng: {
+                n: 12.4,
+                e: -3.1,
+                up: 45.8
+            }
+        }
+    };
+
+    fs.writeFileSync(
+        outputPath,
+        JSON.stringify(earthMovementRates, null, 2) + "\n"
+    );
+
+    console.log("Earth Movement rates JSON written to", outputPath);
+    console.log("Generated at", earthMovementRates.generatedAt);
+    console.log("Future SENG GNSS URL:", getGnssDataUrl("seng"));
+}
+
+main();
