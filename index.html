@@ -1147,7 +1147,22 @@ function getEarthMovementArrow(nRate, eRate) {
     };
 }   
     const EARTH_MOVEMENT_TREND_DAYS = 90;
-    
+    function getEarthMovementDataUrl(stationCode) {
+    // Builds the expected IMO/Vedur GNSS data URL for a station.
+    // Uses fractional-year .NEU files, which contain N / E / Up time-series data.
+    // Example station code: SENG -> SENG-plate.NEU
+
+    const code = String(stationCode || "").trim().toUpperCase();
+
+    if (!code) {
+        return null;
+    }
+
+    return "https://www.vedur.is/gogn/gps/timeseries/timeseries-fractional/" +
+        code +
+        "-plate.NEU";
+}
+   
     const earthMovementRatesByStation = {
     // Future real-data format:
     // Station codes should be lowercase to match station.url / station.id.
