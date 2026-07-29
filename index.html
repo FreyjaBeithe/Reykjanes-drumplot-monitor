@@ -1299,7 +1299,7 @@ async function loadEarthMovementRatesJson() {
 // Values are 90-day trend rates in mm/yr.
 // Station codes are lowercase.
 
-const earthMovementRatesByStation = {
+let earthMovementRatesByStation = {
     // Future real-data format:
     // Station codes should be lowercase to match station.url / station.id.
     //
@@ -1323,7 +1323,6 @@ function getEarthMovementRates(station, index) {
 
     return getEarthMovementDemoRates(index);
 }
-
 // ----------------------------------------------------------
 // ----------------------------------------------------------
 // Earth Movement GNSS station helper
