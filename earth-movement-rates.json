@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T15:00:40.827Z",
+  "generatedAt": "2026-07-30T15:07:16.430Z",
   "source": "IMO/Vedur GNSS .NEU files via VolcanoWatchers GitHub Action",
   "trendDays": 90,
   "rates": {
@@ -631,6 +631,62 @@
       "n": -22.5,
       "e": -525.2,
       "up": -157.7,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "lfel": {
+      "n": -2.8,
+      "e": -537.8,
+      "up": -59.3,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "lisf": {
+      "n": -8.9,
+      "e": -568.9,
+      "up": -15,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "lisk": {
+      "n": 932.9,
+      "e": -1055.9,
+      "up": 266.9,
+      "startYear": 2024.5205,
+      "endYear": 2024.7691,
+      "daysApprox": 90.8
+    },
+    "mana": {
+      "n": 115.2,
+      "e": -586,
+      "up": -57.7,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "mofc": {
+      "n": 44.5,
+      "e": -623.6,
+      "up": -83,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "namc": {
+      "n": -2.7,
+      "e": -651,
+      "up": -18.7,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "nbio": {
+      "n": 33.2,
+      "e": -637.6,
+      "up": 42.8,
       "startYear": 2026.3274,
       "endYear": 2026.574,
       "daysApprox": 90.1
