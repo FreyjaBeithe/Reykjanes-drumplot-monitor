@@ -1078,7 +1078,7 @@ function getEarthMovementArrow(nRate, eRate) {
 }    
 function getEarthMovementVerticalStyle(upRate) {
     const numericUp = Number(upRate);
-    const stableThreshold = 2;
+    const stableThreshold = 10;
 
     if (!Number.isFinite(numericUp)) {
         return {
