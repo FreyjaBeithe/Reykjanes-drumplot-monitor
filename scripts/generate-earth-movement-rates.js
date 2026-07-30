@@ -109,7 +109,14 @@ const stationCodes = [
     "saud",
     "saur",
     "self",
-    "sey5"
+    "sey5",
+    "sifj",
+    "sjuk",
+    "skda",
+    "skfc",
+    "sksh",
+    "slec",
+    "snae"
     ];
 
 function getGnssDataUrl(stationCode) {
