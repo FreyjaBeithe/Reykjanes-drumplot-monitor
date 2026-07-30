@@ -99,7 +99,15 @@ const stationCodes = [
     "ofel",
     "olac",
     "orfc",
-    "rfel"
+    "rfel",
+    "rhof",
+    "rifc",
+    "rjuc",
+    "rvit",
+    "safh",
+    "sarp",
+    "saud",
+    "saur"
     ];
 
 function getGnssDataUrl(stationCode) {
