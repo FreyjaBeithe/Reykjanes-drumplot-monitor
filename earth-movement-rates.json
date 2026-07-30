@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T14:33:16.065Z",
+  "generatedAt": "2026-07-30T15:00:40.827Z",
   "source": "IMO/Vedur GNSS .NEU files via VolcanoWatchers GitHub Action",
   "trendDays": 90,
   "rates": {
@@ -575,6 +575,62 @@
       "n": -49,
       "e": -609.6,
       "up": -89.8,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "kisa": {
+      "n": 227.5,
+      "e": -664.2,
+      "up": -49.5,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "klvc": {
+      "n": -47.2,
+      "e": -601.3,
+      "up": -76.7,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "kosk": {
+      "n": 5.5,
+      "e": -6.4,
+      "up": -15.7,
+      "startYear": 2026.1493,
+      "endYear": 2026.3959,
+      "daysApprox": 90.1
+    },
+    "kriv": {
+      "n": -49.4,
+      "e": -581.9,
+      "up": -78.3,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "kvec": {
+      "n": 47.7,
+      "e": -532.9,
+      "up": -108.4,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "kvis": {
+      "n": 109.4,
+      "e": -626.7,
+      "up": -99.4,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "kvsk": {
+      "n": -22.5,
+      "e": -525.2,
+      "up": -157.7,
       "startYear": 2026.3274,
       "endYear": 2026.574,
       "daysApprox": 90.1
