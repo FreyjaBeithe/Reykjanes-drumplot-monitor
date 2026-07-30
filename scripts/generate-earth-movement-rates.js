@@ -77,7 +77,14 @@ const stationCodes = [
     "kalf",
     "kasc",
     "kast",
-    "keic"
+    "keic",
+    "kisa",
+    "klvc",
+    "kosk",
+    "kriv",
+    "kvec",
+    "kvis",
+    "kvsk"
     ];
 
 function getGnssDataUrl(stationCode) {
