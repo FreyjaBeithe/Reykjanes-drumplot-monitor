@@ -25,7 +25,17 @@ const stationCodes = [
     "dync",
     "dyng",
     "dyny",
-    "eldc"
+    "eldc",
+    "eley",
+    "entc",
+    "fafc",
+    "fagc",
+    "fagd",
+    "fedg",
+    "fefc",
+    "fiho",
+    "fim2",
+    "fjoc"
 ];
 
 function getGnssDataUrl(stationCode) {
