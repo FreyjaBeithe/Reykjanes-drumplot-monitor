@@ -116,7 +116,13 @@ const stationCodes = [
     "skfc",
     "sksh",
     "slec",
-    "snae"
+    "snae",
+    "soho",
+    "ste2",
+    "stor",
+    "sudv",
+    "svie",
+    "syrf"
     ];
 
 function getGnssDataUrl(stationCode) {
