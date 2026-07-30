@@ -128,7 +128,12 @@ const stationCodes = [
     "thoc",
     "undh",
     "urhc",
-    "varg"
+    "varg",
+    "vmey",
+    "vmos",
+    "vogc",
+    "vogs",
+    "vonc"
     ];
 
 function getGnssDataUrl(stationCode) {
