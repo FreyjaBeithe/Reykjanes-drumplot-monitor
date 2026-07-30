@@ -69,8 +69,16 @@ const stationCodes = [
     "hver",
     "hvol",
     "hvsk",
-    "insk"
-];
+    "insk",
+    "inta",
+    "isak",
+    "joku",
+    "jonc",
+    "kalf",
+    "kasc",
+    "kast",
+    "keic"
+    ];
 
 function getGnssDataUrl(stationCode) {
     // Builds the expected IMO/Vedur GNSS .NEU data URL for a station.
