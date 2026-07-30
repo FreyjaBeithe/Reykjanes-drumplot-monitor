@@ -28,12 +28,10 @@ const stationCodes = [
     "eldc",
     "eley",
     "entc",
-    "fafc",
     "fagc",
     "fagd",
     "fedg",
     "fefc",
-    "fiho",
     "fim2",
     "fjoc"
 ];
