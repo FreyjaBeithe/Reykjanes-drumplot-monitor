@@ -107,7 +107,9 @@ const stationCodes = [
     "safh",
     "sarp",
     "saud",
-    "saur"
+    "saur",
+    "self",
+    "sey5"
     ];
 
 function getGnssDataUrl(stationCode) {
