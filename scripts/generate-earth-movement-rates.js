@@ -41,7 +41,15 @@ const stationCodes = [
     "gfum",
     "gigo",
     "gler",
-    "gmey"
+    "gmey",
+    "gola",
+    "gonh",
+    "gran",
+    "grfs",
+    "griv",
+    "grvm",
+    "grvv",
+    "hafc"
 ];
 
 function getGnssDataUrl(stationCode) {
