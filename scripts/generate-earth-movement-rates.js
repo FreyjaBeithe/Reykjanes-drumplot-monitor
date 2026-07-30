@@ -91,7 +91,15 @@ const stationCodes = [
     "mana",
     "mofc",
     "namc",
-    "nbio"
+    "nbio",
+    "nbio",
+    "nvel",
+    "nyla",
+    "oddf",
+    "ofel",
+    "olac",
+    "orfc",
+    "rfel"
     ];
 
 function getGnssDataUrl(stationCode) {
