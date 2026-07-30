@@ -15,7 +15,17 @@ const stationCodes = [
     "alfd",
     "arho",
     "aust",
-    "bald"
+    "bald",
+    "baug",
+    "bjac",
+    "bjtv",
+    "brik",
+    "brtt",
+    "budh",
+    "dync",
+    "dyng",
+    "dyny",
+    "eldc"
 ];
 
 function getGnssDataUrl(stationCode) {
