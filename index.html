@@ -1341,7 +1341,8 @@ initialiseEarthMovementRates();
 
 function getEarthMovementRates(station, index) {
     // First checks loaded/local N / E / Up trend-rate values.
-    // If no value is available for this station, falls back to demo rates.
+    // If no real value is available for this station, return N/A values.
+    // This prevents old demo uplift/subsidence values from appearing on the live map.
 
     const stationCode = (station.url || station.id || "").toLowerCase();
 
@@ -1349,7 +1350,11 @@ function getEarthMovementRates(station, index) {
         return earthMovementRatesByStation[stationCode];
     }
 
-    return getEarthMovementDemoRates(index);
+    return {
+        n: null,
+        e: null,
+        up: null
+    };
 }
 // ----------------------------------------------------------
 // ----------------------------------------------------------
