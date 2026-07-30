@@ -10,7 +10,12 @@ const stationCodes = [
     "gusk",
     "gjog",
     "afst",
-    "moha"
+    "moha",
+    "akur",
+    "alfd",
+    "arho",
+    "aust",
+    "bald"
 ];
 
 function getGnssDataUrl(stationCode) {
