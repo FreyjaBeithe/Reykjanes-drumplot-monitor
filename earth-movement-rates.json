@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T15:38:36.212Z",
+  "generatedAt": "2026-07-30T15:44:24.211Z",
   "source": "IMO/Vedur GNSS .NEU files via VolcanoWatchers GitHub Action",
   "trendDays": 90,
   "rates": {
@@ -927,6 +927,54 @@
       "n": -51.1,
       "e": -607.5,
       "up": -61.6,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "tanc": {
+      "n": 72.3,
+      "e": -627.9,
+      "up": -35.6,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "thob": {
+      "n": -100.8,
+      "e": -555.4,
+      "up": 101.8,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "thoc": {
+      "n": 43.1,
+      "e": -603.1,
+      "up": -160.1,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "undh": {
+      "n": -55.1,
+      "e": -602.6,
+      "up": -77.2,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "urhc": {
+      "n": 58.2,
+      "e": -608.2,
+      "up": -105.5,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "varg": {
+      "n": 112.2,
+      "e": -594.6,
+      "up": -139.7,
       "startYear": 2026.3274,
       "endYear": 2026.574,
       "daysApprox": 90.1
