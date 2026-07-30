@@ -122,7 +122,13 @@ const stationCodes = [
     "stor",
     "sudv",
     "svie",
-    "syrf"
+    "syrf",
+    "tanc",
+    "thob",
+    "thoc",
+    "undh",
+    "urhc",
+    "varg"
     ];
 
 function getGnssDataUrl(stationCode) {
