@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T15:17:18.723Z",
+  "generatedAt": "2026-07-30T15:24:00.388Z",
   "source": "IMO/Vedur GNSS .NEU files via VolcanoWatchers GitHub Action",
   "trendDays": 90,
   "rates": {
@@ -809,6 +809,22 @@
       "up": -10.7,
       "startYear": 2026.1027,
       "endYear": 2026.3493,
+      "daysApprox": 90.1
+    },
+    "self": {
+      "n": -24,
+      "e": -583.6,
+      "up": -118.7,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "sey5": {
+      "n": 95.9,
+      "e": -591.1,
+      "up": -99.7,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
       "daysApprox": 90.1
     }
   }
