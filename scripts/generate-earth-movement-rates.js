@@ -54,7 +54,14 @@ const stationCodes = [
     "haud",
     "helc",
     "helf",
-    "herv"
+    "herv",
+    "hesa",
+    "hita",
+    "hlid",
+    "hotj",
+    "hrac",
+    "hrag",
+    "hric"
 ];
 
 function getGnssDataUrl(stationCode) {
