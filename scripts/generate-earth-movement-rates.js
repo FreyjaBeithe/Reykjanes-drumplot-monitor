@@ -84,7 +84,14 @@ const stationCodes = [
     "kriv",
     "kvec",
     "kvis",
-    "kvsk"
+    "kvsk",
+    "lfel",
+    "lisf",
+    "lisk",
+    "mana",
+    "mofc",
+    "namc",
+    "nbio"
     ];
 
 function getGnssDataUrl(stationCode) {
