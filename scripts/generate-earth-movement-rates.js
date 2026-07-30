@@ -33,7 +33,15 @@ const stationCodes = [
     "fedg",
     "fefc",
     "fim2",
-    "fjoc"
+    "fjoc",
+    "ftey",
+    "gake",
+    "gevk",
+    "gfel",
+    "gfum",
+    "gigo",
+    "gler",
+    "gmey"
 ];
 
 function getGnssDataUrl(stationCode) {
