@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T14:19:37.159Z",
+  "generatedAt": "2026-07-30T14:33:16.065Z",
   "source": "IMO/Vedur GNSS .NEU files via VolcanoWatchers GitHub Action",
   "trendDays": 90,
   "rates": {
@@ -511,6 +511,70 @@
       "n": -16.2,
       "e": -570.3,
       "up": -21.4,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "inta": {
+      "n": 50.6,
+      "e": -592.6,
+      "up": -171.5,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "isak": {
+      "n": 14.8,
+      "e": 14.1,
+      "up": 74.4,
+      "startYear": 2026.2945,
+      "endYear": 2026.5411,
+      "daysApprox": 90.1
+    },
+    "joku": {
+      "n": -5.5,
+      "e": -588.2,
+      "up": -122.7,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "jonc": {
+      "n": 70.8,
+      "e": -644.2,
+      "up": -120.8,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "kalf": {
+      "n": -17.9,
+      "e": 14.2,
+      "up": 26.5,
+      "startYear": 2026.2781,
+      "endYear": 2026.574,
+      "daysApprox": 108.1
+    },
+    "kasc": {
+      "n": 68.2,
+      "e": -627,
+      "up": -81.1,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "kast": {
+      "n": -47.5,
+      "e": -557.1,
+      "up": -51.8,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "keic": {
+      "n": -49,
+      "e": -609.6,
+      "up": -89.8,
       "startYear": 2026.3274,
       "endYear": 2026.574,
       "daysApprox": 90.1
