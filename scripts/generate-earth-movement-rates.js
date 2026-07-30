@@ -61,7 +61,15 @@ const stationCodes = [
     "hotj",
     "hrac",
     "hrag",
-    "hric"
+    "hric",
+    "hs02",
+    "husm",
+    "hvas",
+    "hveh",
+    "hver",
+    "hvol",
+    "hvsk",
+    "insk"
 ];
 
 function getGnssDataUrl(stationCode) {
