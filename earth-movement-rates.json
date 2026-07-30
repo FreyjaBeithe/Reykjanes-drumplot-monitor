@@ -1,47 +1,87 @@
 {
-  "generatedAt": "2026-07-29T14:59:24.653Z",
+  "generatedAt": "2026-07-30T12:46:10.900Z",
   "source": "IMO/Vedur GNSS .NEU files via VolcanoWatchers GitHub Action",
   "trendDays": 90,
   "rates": {
     "seng": {
-      "n": 25.2,
-      "e": 61.3,
-      "up": 173.5,
-      "startYear": 2026.3247,
-      "endYear": 2026.5712,
-      "daysApprox": 90
+      "n": -14.4,
+      "e": -572.6,
+      "up": 106.7,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
     },
     "gusk": {
-      "n": -30.1,
-      "e": 20,
-      "up": -9.5,
-      "startYear": 2026.3247,
-      "endYear": 2026.5712,
-      "daysApprox": 90
+      "n": -20,
+      "e": -621.6,
+      "up": 44.7,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
     },
     "gjog": {
-      "n": -3.3,
-      "e": -1.6,
-      "up": -0.8,
-      "startYear": 2026.3247,
-      "endYear": 2026.5712,
-      "daysApprox": 90
+      "n": 127.9,
+      "e": -657.9,
+      "up": -9.4,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
     },
     "afst": {
-      "n": -21.8,
-      "e": 37.7,
-      "up": 7.6,
-      "startYear": 2026.3247,
-      "endYear": 2026.5712,
-      "daysApprox": 90
+      "n": -42,
+      "e": -600.7,
+      "up": -58.6,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
     },
     "moha": {
-      "n": -28.3,
-      "e": 39.3,
-      "up": -18.1,
-      "startYear": 2026.3247,
-      "endYear": 2026.5712,
-      "daysApprox": 90
+      "n": -48.2,
+      "e": -587.6,
+      "up": -94.6,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "akur": {
+      "n": 7,
+      "e": -0.9,
+      "up": 4.4,
+      "startYear": 2025.9986,
+      "endYear": 2026.574,
+      "daysApprox": 210.2
+    },
+    "alfd": {
+      "n": 65.9,
+      "e": -548.8,
+      "up": -88,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "arho": {
+      "n": 0.6,
+      "e": 11.4,
+      "up": -7,
+      "startYear": 2025.9932,
+      "endYear": 2026.574,
+      "daysApprox": 212.1
+    },
+    "aust": {
+      "n": -55.5,
+      "e": -633.4,
+      "up": -3.5,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "bald": {
+      "n": 47.7,
+      "e": -604.4,
+      "up": -126.6,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
     }
   }
 }
