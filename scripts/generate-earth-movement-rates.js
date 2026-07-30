@@ -49,7 +49,12 @@ const stationCodes = [
     "griv",
     "grvm",
     "grvv",
-    "hafc"
+    "hafc",
+    "hafs",
+    "haud",
+    "helc",
+    "helf",
+    "herv"
 ];
 
 function getGnssDataUrl(stationCode) {
