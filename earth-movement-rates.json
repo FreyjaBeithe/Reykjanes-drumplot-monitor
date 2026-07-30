@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T14:11:09.919Z",
+  "generatedAt": "2026-07-30T14:19:37.159Z",
   "source": "IMO/Vedur GNSS .NEU files via VolcanoWatchers GitHub Action",
   "trendDays": 90,
   "rates": {
@@ -447,6 +447,70 @@
       "n": 84.8,
       "e": -571,
       "up": -145.8,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "hs02": {
+      "n": -29.1,
+      "e": -592.3,
+      "up": 73,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "husm": {
+      "n": -48.6,
+      "e": -577.9,
+      "up": -69.1,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "hvas": {
+      "n": -41.1,
+      "e": -606.6,
+      "up": -30.6,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "hveh": {
+      "n": -48.1,
+      "e": -569.7,
+      "up": -125.2,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "hver": {
+      "n": -65.9,
+      "e": -569.1,
+      "up": -171.3,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "hvol": {
+      "n": -40.8,
+      "e": -586.9,
+      "up": -163.7,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "hvsk": {
+      "n": -36.5,
+      "e": -600.9,
+      "up": -70.7,
+      "startYear": 2026.3274,
+      "endYear": 2026.574,
+      "daysApprox": 90.1
+    },
+    "insk": {
+      "n": -16.2,
+      "e": -570.3,
+      "up": -21.4,
       "startYear": 2026.3274,
       "endYear": 2026.574,
       "daysApprox": 90.1
