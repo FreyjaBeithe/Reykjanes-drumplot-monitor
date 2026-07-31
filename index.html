@@ -2013,11 +2013,13 @@ function openGpsStationByCode(stationCode, options) {
 
     hideWelcomeOverlay();
 
+    const stationID = String(matchingStation.url || matchingStation.id || "").toUpperCase();
     const gpsInput = document.getElementById("gpsSearch");
     const gpsClear = document.getElementById("clearGpsSearch");
+    const gpsContainer = document.getElementById("gps-data");
 
     if (gpsInput) {
-        gpsInput.value = matchingStation.url || matchingStation.id;
+        gpsInput.value = stationID;
     }
 
     if (gpsClear) {
@@ -2036,15 +2038,37 @@ function openGpsStationByCode(stationCode, options) {
         }
     });
 
-    setBaseMap("satellite");
+    const gpsImageURL = "https://cdn.vedur.is/gps/timeseries/graphs/standard_24h/" +
+        stationID +
+        "-plate-90d.png";
+
+    if (gpsContainer) {
+        gpsContainer.innerHTML = `
+            <div style="padding:10px;">
+                <h2 style="color:#2e7d32; margin-bottom:5px;">${matchingStation.name} (${stationID})</h2>
+                <div class="coords-text" style="border-left-color: #2e7d32; color: #444; font-weight: bold;">
+                    LAT: ${matchingStation.lat} | LON: ${matchingStation.lon}
+                </div>
+                <p style="margin:20px 0 8px 0; font-weight: 800; color: #222; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px;">📈 90-Day Vertical Displacement</p>
+
+                <div style="position: relative; background: #f4f4f4; min-height: 150px; display: flex; align-items: center; justify-content: center; border: 1px solid #ccc;">
+                    <div class="native-loader" style="position: absolute; width: 30px; height: 30px; border: 4px solid #e0e0e0; border-top: 4px solid #2e7d32; border-radius: 50%; z-index: 1;"></div>
+                    <a href="${gpsImageURL}" target="_blank" style="position: relative; z-index: 2; width: 100%; display: block;">
+                        <img src="${gpsImageURL}" alt="GPS Displacement Chart" style="width:100%; display: block; background: white;">
+                    </a>
+                </div>
+
+                <p style="font-size: 11px; color: #555; text-align: center; margin-top: 8px; font-weight: 600;">(Click chart to enlarge)</p>
+            </div>`;
+    }
+
     map.closePopup();
+    setBaseMap("satellite");
     map.setView(matchingMarker.getLatLng(), 10);
-    matchingMarker.fire("click");
 
     setTimeout(function () {
-        setBaseMap("satellite");
         map.invalidateSize();
-    }, 250);
+    }, 200);
 
     return true;
 }
