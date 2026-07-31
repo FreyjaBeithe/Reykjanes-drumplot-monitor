@@ -1343,7 +1343,30 @@ let earthMovementRatesByStation = {
 
     seng: { n: 12.4, e: -3.1, up: 45.8 }
 };
+let earthMovementRatesGeneratedAt = null;
 
+function formatEarthMovementDataUpdated(timestamp) {
+    if (!timestamp) {
+        return "Data updated: not available";
+    }
+
+    const date = new Date(timestamp);
+
+    if (isNaN(date.getTime())) {
+        return "Data updated: not available";
+    }
+
+    return "Data updated: " + date.toLocaleString("en-GB", {
+        timeZone: "UTC",
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZoneName: "short"
+    });
+}
+    
 function applyEarthMovementRatesJson(data) {
     // Applies loaded earth-movement-rates.json data to the map.
     // The JSON must contain a rates object keyed by lowercase station code.
