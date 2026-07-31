@@ -1686,6 +1686,7 @@ if (openGpsButton) {
 }  
 const earthMovementSearchButton = document.getElementById("earth-movement-station-search-button");
 const earthMovementSearchInput = document.getElementById("earth-movement-station-search");
+const earthMovementOpenGpsButton = document.getElementById("earth-movement-open-gps-button");   
 
 if (earthMovementSearchButton) {
     earthMovementSearchButton.addEventListener("click", findEarthMovementStation);
@@ -1697,7 +1698,14 @@ if (earthMovementSearchInput) {
             findEarthMovementStation();
         }
     });
-}    
+}  
+   if (earthMovementOpenGpsButton) {
+    earthMovementOpenGpsButton.addEventListener("click", function () {
+        if (selectedGnssStationCode) {
+            openGpsStationByCode(selectedGnssStationCode);
+        }
+    });
+} 
 // ==========================================
 // 5. MARKER STYLE AND LABEL ADJUSTMENTS
 // ==========================================
