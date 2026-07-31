@@ -1417,18 +1417,18 @@ const symbol = "▲";
 const movementLabel = verticalStyle.label;
 const markerColor = verticalStyle.color;
 
-     const iconHtml =
+  const iconHtml =
     '<div style="' +
-        'width:24px;' +
-        'height:24px;' +
+        'width:30px;' +
+        'height:30px;' +
         'display:flex;' +
         'align-items:center;' +
         'justify-content:center;' +
         'color:' + markerColor + ';' +
-        'font-size:22px;' +
+        'font-size:28px;' +
         'font-weight:bold;' +
         'line-height:1;' +
-        'text-shadow:0 0 3px #000000, 0 0 5px #000000;' +
+        'text-shadow:0 0 3px #000000, 0 0 6px #000000;' +
     '">' +
         symbol +
     '</div>';
@@ -1436,8 +1436,8 @@ const markerColor = verticalStyle.color;
             const icon = L.divIcon({
                 className: "earth-movement-triangle-icon",
                 html: iconHtml,
-                iconSize: [24, 24],
-                iconAnchor: [12, 12]
+                iconSize: [30, 30],
+                iconAnchor: [15, 15]
             });
 
      const popupHtml =
