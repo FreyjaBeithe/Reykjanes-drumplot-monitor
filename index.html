@@ -824,7 +824,7 @@ sidebar.on('content', function (e) {
         }
     });
 
-  if (selectedGnssStationCode) {
+if (selectedGnssStationCode) {
     const stationCodeToOpen = selectedGnssStationCode;
 
     setTimeout(function () {
@@ -834,7 +834,7 @@ sidebar.on('content', function (e) {
             map.removeLayer(earthMovementLayer);
         }
 
-        openGpsStationByCode(stationCodeToOpen);
+        openGpsStationByCode(stationCodeToOpen, { openSidebar: false });
     }, 150);
 }
 
