@@ -806,9 +806,11 @@ sidebar.on('content', function (e) {
     const overlay = document.getElementById('welcome-overlay');
     if (overlay) overlay.style.opacity = '0';
     
-    if (e.id === 'gps') {
-        // --- GPS TAB OPENED: Show ONLY Triangles ---
-        allMarkers.forEach(marker => {
+   if (e.id === 'gps') {
+    // --- GPS TAB OPENED: Show ONLY GPS stations ---
+    setBaseMap("satellite");
+
+    allMarkers.forEach(marker => {
             const station = stations.find(s => s.id.toLowerCase() === marker.stationID);
             if (station && station.type === 'gps') {
                 marker.addTo(map);
