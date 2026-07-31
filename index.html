@@ -1981,10 +1981,13 @@ if (gpsSearchInput) {
     }
 }
 
- function openGpsStationByCode(stationCode) {
+function openGpsStationByCode(stationCode, options) {
     if (!stationCode) {
         return false;
     }
+
+    const settings = options || {};
+    const shouldOpenSidebar = settings.openSidebar !== false;
 
     const code = String(stationCode).trim().toLowerCase();
 
@@ -2004,7 +2007,10 @@ if (gpsSearchInput) {
         return false;
     }
 
-    sidebar.open("gps");
+    if (shouldOpenSidebar) {
+        sidebar.open("gps");
+    }
+
     hideWelcomeOverlay();
 
     const gpsInput = document.getElementById("gpsSearch");
@@ -2030,26 +2036,18 @@ if (gpsSearchInput) {
         }
     });
 
-setBaseMap("satellite");
-map.invalidateSize();
-
-map.setView(matchingMarker.getLatLng(), 10);
-matchingMarker.fire("click");
-
-setTimeout(function () {
     setBaseMap("satellite");
-
-    if (satellite && satellite.bringToBack) {
-        satellite.bringToBack();
-    }
-
-    map.invalidateSize();
+    map.closePopup();
     map.setView(matchingMarker.getLatLng(), 10);
-}, 300);
+    matchingMarker.fire("click");
 
-return true;
-}   
+    setTimeout(function () {
+        setBaseMap("satellite");
+        map.invalidateSize();
+    }, 250);
 
+    return true;
+}
 // ==========================================================
 // 4. RECENT EARTHQUAKES ENGINE
 // Live IMO earthquake feed, ledger, map markers and popups
