@@ -1620,7 +1620,21 @@ const arrowTransform = arrowRotation === null ? "" : "transform:rotate(" + arrow
             }
         });
     }
-}   
+}  
+const earthMovementSearchButton = document.getElementById("earth-movement-station-search-button");
+const earthMovementSearchInput = document.getElementById("earth-movement-station-search");
+
+if (earthMovementSearchButton) {
+    earthMovementSearchButton.addEventListener("click", findEarthMovementStation);
+}
+
+if (earthMovementSearchInput) {
+    earthMovementSearchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            findEarthMovementStation();
+        }
+    });
+}    
 // ==========================================
 // 5. MARKER STYLE AND LABEL ADJUSTMENTS
 // ==========================================
