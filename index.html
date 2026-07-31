@@ -2030,14 +2030,22 @@ if (gpsSearchInput) {
         }
     });
 
- setBaseMap("satellite");
+setBaseMap("satellite");
+map.invalidateSize();
 
 map.setView(matchingMarker.getLatLng(), 10);
 matchingMarker.fire("click");
 
 setTimeout(function () {
     setBaseMap("satellite");
-}, 100);
+
+    if (satellite && satellite.bringToBack) {
+        satellite.bringToBack();
+    }
+
+    map.invalidateSize();
+    map.setView(matchingMarker.getLatLng(), 10);
+}, 300);
 
 return true;
 }   
