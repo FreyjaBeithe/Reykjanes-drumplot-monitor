@@ -2030,11 +2030,18 @@ if (gpsSearchInput) {
         }
     });
 
-    map.setView(matchingMarker.getLatLng(), 10);
-    matchingMarker.fire("click");
+ setBaseMap("satellite");
 
-    return true;
+map.setView(matchingMarker.getLatLng(), 10);
+matchingMarker.fire("click");
+
+setTimeout(function () {
+    setBaseMap("satellite");
+}, 100);
+
+return true;
 }   
+
 // ==========================================================
 // 4. RECENT EARTHQUAKES ENGINE
 // Live IMO earthquake feed, ledger, map markers and popups
