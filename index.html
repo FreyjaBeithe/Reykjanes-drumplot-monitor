@@ -1479,19 +1479,24 @@ marker.addTo(earthMovementLayer);
 // Final version: direction will come from the 90-day N/E trend.
 // Arrow shows direction only, not overall movement distance.
 
-const arrowSymbol = getEarthMovementArrow(movementRate.n, movementRate.e);
+const arrowRotation = getEarthMovementArrowRotation(movementRate.n, movementRate.e);
+const arrowSymbol = arrowRotation === null ? "•" : "➜";
+const arrowColor = arrowRotation === null ? "#9e9e9e" : "#ffb300";
+const arrowTransform = arrowRotation === null ? "" : "transform:rotate(" + arrowRotation + "deg);";
 
             const arrowIconHtml =
                 '<div style="' +
-                    'width:22px;' +
-                    'height:22px;' +
+                    'width:34px;' +
+                    'height:24px;' +
                     'display:flex;' +
                     'align-items:center;' +
                     'justify-content:center;' +
-                    'color:#ffb300;' +
-                    'font-size:20px;' +
+                    'color:' + arrowColor + ';' +
+                    'font-size:26px;' +
                     'font-weight:bold;' +
                     'line-height:1;' +
+                    'transform-origin:center center;' +
+                    arrowTransform +
                     'text-shadow:0 0 3px #000000, 0 0 5px #000000;' +
                 '">' +
                     arrowSymbol +
@@ -1500,8 +1505,8 @@ const arrowSymbol = getEarthMovementArrow(movementRate.n, movementRate.e);
             const arrowIcon = L.divIcon({
                 className: "earth-movement-arrow-icon",
                 html: arrowIconHtml,
-                iconSize: [22, 22],
-                iconAnchor: [11, 11]
+                iconSize: [34, 24],
+                iconAnchor: [17, 12]
             });
 
             L.marker([station.lat, station.lon], {
