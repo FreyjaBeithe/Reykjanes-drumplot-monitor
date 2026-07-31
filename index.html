@@ -1636,6 +1636,8 @@ const arrowTransform = arrowRotation === null ? "" : "transform:rotate(" + arrow
     }
 
     const stationCode = String(matchedStation.url || matchedStation.id || "").toUpperCase();
+   
+     selectedGnssStationCode = stationCode.toLowerCase(); 
 
     if (message) {
         message.textContent = "Found " + stationCode + " - " + matchedStation.name;
