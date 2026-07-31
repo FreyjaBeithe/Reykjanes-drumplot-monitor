@@ -642,8 +642,8 @@ var darkReliefShade = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/s
 });
 
 var darkRelief = L.layerGroup([darkReliefBase, darkReliefShade]);       
-
-   // Default to loading the satellite map first
+    
+// Default to loading the satellite map first
 satellite.addTo(map);
 
 const quakeLayer = L.layerGroup();
@@ -652,6 +652,11 @@ const earthMovementLayer = L.layerGroup();
 const quakeMarkers = {};
 let allEarthquakes = [];
 let selectedLedgerRow = null;
+
+// Stores the last GNSS station selected from Earth Movement.
+// Later, the GPS Deformation tab can use this to open the matching graph.
+let selectedGnssStationCode = null;
+    
 
 // Remember earthquake IDs we have already displayed
 let seenEarthquakeIds = new Set();
