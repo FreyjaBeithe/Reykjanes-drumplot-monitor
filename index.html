@@ -824,9 +824,19 @@ sidebar.on('content', function (e) {
         }
     });
 
-    if (selectedGnssStationCode) {
-        openGpsStationByCode(selectedGnssStationCode);
-    }
+  if (selectedGnssStationCode) {
+    const stationCodeToOpen = selectedGnssStationCode;
+
+    setTimeout(function () {
+        map.closePopup();
+
+        if (earthMovementLayer) {
+            map.removeLayer(earthMovementLayer);
+        }
+
+        openGpsStationByCode(stationCodeToOpen);
+    }, 150);
+}
 
 } else if (e.id === 'home') {
         // --- SEISMIC TAB OPENED: Show ONLY Red Dots ---
