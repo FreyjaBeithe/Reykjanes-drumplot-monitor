@@ -811,20 +811,24 @@ sidebar.on('content', function (e) {
     const overlay = document.getElementById('welcome-overlay');
     if (overlay) overlay.style.opacity = '0';
     
-   if (e.id === 'gps') {
+  if (e.id === 'gps') {
     // --- GPS TAB OPENED: Show ONLY GPS stations ---
     setBaseMap("satellite");
 
     allMarkers.forEach(marker => {
-            const station = stations.find(s => s.id.toLowerCase() === marker.stationID);
-            if (station && station.type === 'gps') {
-                marker.addTo(map);
-            } else {
-                map.removeLayer(marker);
-            }
-        });
+        const station = stations.find(s => s.id.toLowerCase() === marker.stationID);
+        if (station && station.type === 'gps') {
+            marker.addTo(map);
+        } else {
+            map.removeLayer(marker);
+        }
+    });
 
-    } else if (e.id === 'home') {
+    if (selectedGnssStationCode) {
+        openGpsStationByCode(selectedGnssStationCode);
+    }
+
+} else if (e.id === 'home') {
         // --- SEISMIC TAB OPENED: Show ONLY Red Dots ---
         allMarkers.forEach(marker => {
             const station = stations.find(s => s.id.toLowerCase() === marker.stationID);
