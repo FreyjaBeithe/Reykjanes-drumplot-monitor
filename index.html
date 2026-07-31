@@ -715,7 +715,37 @@ function setActiveMapStyleButton(layerName) {
         }
     });
 }
- // Custom visible map style selector
+ function setBaseMap(layerName) {
+    map.removeLayer(topo);
+    map.removeLayer(darkMode);
+    map.removeLayer(satellite);
+    map.removeLayer(darkRelief);
+
+    if (layerName === "topo") {
+        map.addLayer(topo);
+    }
+
+    if (layerName === "dark") {
+        map.addLayer(darkMode);
+    }
+
+    if (layerName === "satellite") {
+        map.addLayer(satellite);
+    }
+
+    if (layerName === "relief") {
+        map.addLayer(darkRelief);
+    }
+
+    const selector = document.querySelector(".map-style-selector");
+
+    if (selector) {
+        selector.querySelectorAll("button").forEach(function (button) {
+            button.classList.toggle("active", button.dataset.layer === layerName);
+        });
+    }
+}
+    // Custom visible map style selector
 const mapStyleControl = L.control({ position: 'topright' });
 
 mapStyleControl.onAdd = function () {
