@@ -1966,6 +1966,61 @@ if (gpsSearchInput) {
         });
     }
 }
+
+ function openGpsStationByCode(stationCode) {
+    if (!stationCode) {
+        return false;
+    }
+
+    const code = String(stationCode).trim().toLowerCase();
+
+    const matchingMarker = allMarkers.find(function (marker) {
+        return marker.stationID === code;
+    });
+
+    if (!matchingMarker) {
+        return false;
+    }
+
+    const matchingStation = stations.find(function (station) {
+        return station.id.toLowerCase() === code && station.type === "gps";
+    });
+
+    if (!matchingStation) {
+        return false;
+    }
+
+    sidebar.open("gps");
+    hideWelcomeOverlay();
+
+    const gpsInput = document.getElementById("gpsSearch");
+    const gpsClear = document.getElementById("clearGpsSearch");
+
+    if (gpsInput) {
+        gpsInput.value = matchingStation.url || matchingStation.id;
+    }
+
+    if (gpsClear) {
+        gpsClear.style.display = "block";
+    }
+
+    allMarkers.forEach(function (marker) {
+        const station = stations.find(function (item) {
+            return item.id.toLowerCase() === marker.stationID;
+        });
+
+        if (station && station.type === "gps") {
+            marker.addTo(map);
+        } else {
+            map.removeLayer(marker);
+        }
+    });
+
+    map.setView(matchingMarker.getLatLng(), 10);
+    matchingMarker.fire("click");
+
+    return true;
+}   
 // ==========================================================
 // 4. RECENT EARTHQUAKES ENGINE
 // Live IMO earthquake feed, ledger, map markers and popups
