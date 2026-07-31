@@ -1389,12 +1389,24 @@ function applyEarthMovementRatesJson(data) {
 
 async function initialiseEarthMovementRates() {
     // Loads local Earth Movement JSON data once when the page starts.
-    // If loading fails, the map keeps using the fallback/test values above.
+    // If loading fails, the map keeps using fallback/N/A values.
+    // Also updates the Earth Movement sidebar timestamp.
 
     const data = await loadEarthMovementRatesJson();
+    const updatedElement = document.getElementById("earth-movement-data-updated");
 
     if (applyEarthMovementRatesJson(data)) {
         console.log("Earth Movement rates JSON loaded:", data.generatedAt || "no timestamp");
+
+        if (updatedElement) {
+            updatedElement.textContent = formatEarthMovementDataUpdated(earthMovementRatesGeneratedAt);
+        }
+
+        return;
+    }
+
+    if (updatedElement) {
+        updatedElement.textContent = "Data updated: not available";
     }
 }
 
