@@ -643,8 +643,8 @@ var darkReliefShade = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/s
 
 var darkRelief = L.layerGroup([darkReliefBase, darkReliefShade]);       
 
-        // Default to loading the topographic map first
-topo.addTo(map);
+   // Default to loading the satellite map first
+satellite.addTo(map);
 
 const quakeLayer = L.layerGroup();
 const earthMovementLayer = L.layerGroup();
@@ -752,10 +752,10 @@ mapStyleControl.onAdd = function () {
     const div = L.DomUtil.create('div', 'map-style-selector');
 
     div.innerHTML = `
-        <button data-layer="topo" class="active">Topo</button>
-        <button data-layer="dark">Dark</button>
-        <button data-layer="satellite">Satellite</button>
-        <button data-layer="relief">Relief</button>
+       <button data-layer="topo">Topo</button>
+<button data-layer="dark">Dark</button>
+<button data-layer="satellite" class="active">Satellite</button>
+<button data-layer="relief">Relief</button>
     `;
 
     L.DomEvent.disableClickPropagation(div);
