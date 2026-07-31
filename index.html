@@ -1076,7 +1076,38 @@ function getEarthMovementArrow(nRate, eRate) {
 
     return "•";
 }    
-function getEarthMovementVerticalStyle(upRate) {
+
+    function getEarthMovementArrowRotation(nRate, eRate) {
+    // Converts N/E 90-day trend rates into a CSS rotation angle.
+    // The visual arrow starts as →, so:
+    //   east  = 0deg
+    //   north = -90deg
+    //   west  = 180deg
+    //   south = 90deg
+    //
+    // Direction only. This does not scale arrow length.
+
+    if (
+        nRate === null || nRate === undefined ||
+        eRate === null || eRate === undefined ||
+        isNaN(Number(nRate)) || isNaN(Number(eRate))
+    ) {
+        return null;
+    }
+
+    const numericN = Number(nRate);
+    const numericE = Number(eRate);
+
+    if (Math.abs(numericN) < 0.1 && Math.abs(numericE) < 0.1) {
+        return null;
+    }
+
+    const compassAngle = Math.atan2(numericN, numericE) * 180 / Math.PI;
+
+    return -compassAngle;
+}
+    
+    function getEarthMovementVerticalStyle(upRate) {
     const numericUp = Number(upRate);
     const stableThreshold = 10;
 
