@@ -581,13 +581,17 @@
     </button>
   </div>
 
-  <div id="earth-movement-station-search-message" style="margin-top:6px; font-size:12px; color:#b0bec5;">
+   <div id="earth-movement-station-search-message" style="margin-top:6px; font-size:12px; color:#b0bec5;">
     Search by station code, for example SENG, GUSK, MOHA.
   </div>
+
+  <button id="earth-movement-open-gps-button" style="display:none; margin-top:10px; width:100%; padding:8px 10px; border:1px solid #4caf50; border-radius:6px; background:#1f3d2a; color:#e8f5e9; font-weight:700; cursor:pointer;">
+    View this station in GPS Deformation
+  </button>
 </div>
             
 <p>
-  To view the detailed 90-day graph for a station, open the GPS Deformation tab and search for the same station code.
+  Search for a GNSS station above, then use the button to open its detailed 90-day GPS Deformation graph.
 </p>
     </div>
 </div>
@@ -595,7 +599,6 @@
         </div>
     </div>
 </div>
-
 <div id="map"></div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-sidebar-v2@3.2.3/js/leaflet-sidebar.min.js"></script>
