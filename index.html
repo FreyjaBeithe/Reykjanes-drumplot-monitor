@@ -2475,24 +2475,20 @@ drawEarthMovementStations();
 } else {
     document.getElementById('sidebar').classList.remove('quake-mode');
     map.removeLayer(earthMovementLayer);
-    setActiveMapStyleButton('topo');
 
-        map.removeLayer(darkMode);
-        map.removeLayer(satellite);
-        map.removeLayer(darkRelief);
-
-        if (!map.hasLayer(topo)) {
-            map.addLayer(topo);
-        }
-
-        if (isControlVisible) {
-            map.removeControl(quakeControlInstance);
-            map.removeControl(legendInstance);
-            isControlVisible = false;
-        }
+    if (e.id === 'gps') {
+        setBaseMap("satellite");
+    } else {
+        setBaseMap("topo");
     }
-});
 
+    if (isControlVisible) {
+        map.removeControl(quakeControlInstance);
+        map.removeControl(legendInstance);
+        isControlVisible = false;
+    }
+}
+});
 // ----------------------------------------------------------
 // 4.1 Earthquake colour helper
 // Controls marker, ledger row and legend colours
