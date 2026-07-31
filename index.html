@@ -1839,7 +1839,9 @@ sidebar.on('closing', function () {
     if (earthMovementLayer) {
         earthMovementLayer.clearLayers();
     }
-
+  
+    selectedGnssStationCode = null;
+    
     const seismicContainer = document.getElementById('station-data');
     const gpsContainer = document.getElementById('gps-data');
     const gpsInput = document.getElementById('gpsSearch');
