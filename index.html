@@ -878,10 +878,16 @@ function resetMap() {
     // Snap back cleanly to our optimal static position
    map.setView([64.90, -21.4], 7);
 
-    // REVERT TO TOPOGRAPHY ON CLOSE
+      // Revert to Satellite home map on close
     map.removeLayer(darkMode);
-    map.removeLayer(satellite);
-    topo.addTo(map);
+    map.removeLayer(topo);
+    map.removeLayer(darkRelief);
+
+    if (!map.hasLayer(satellite)) {
+        satellite.addTo(map);
+    }
+
+    setActiveMapStyleButton("satellite");
     
     const overlay = document.getElementById('welcome-overlay');
     if (overlay) overlay.style.opacity = '1';      
