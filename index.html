@@ -2476,11 +2476,11 @@ drawEarthMovementStations();
     document.getElementById('sidebar').classList.remove('quake-mode');
     map.removeLayer(earthMovementLayer);
 
-    if (e.id === 'gps') {
-        setBaseMap("satellite");
-    } else {
-        setBaseMap("topo");
-    }
+   if (e.id === 'gps' || e.id === 'home') {
+    setBaseMap("satellite");
+} else {
+    setBaseMap("topo");
+}
 
     if (isControlVisible) {
         map.removeControl(quakeControlInstance);
