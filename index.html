@@ -1370,13 +1370,15 @@ function formatEarthMovementDataUpdated(timestamp) {
 function applyEarthMovementRatesJson(data) {
     // Applies loaded earth-movement-rates.json data to the map.
     // The JSON must contain a rates object keyed by lowercase station code.
-    // If no valid rates object is present, the current placeholder/demo fallback stays unchanged.
+    // Also stores the generatedAt timestamp so the sidebar can show when the data was updated.
 
     if (!data || !data.rates) {
         return false;
     }
 
     earthMovementRatesByStation = data.rates;
+    earthMovementRatesGeneratedAt = data.generatedAt || null;
+
     return true;
 }
 
