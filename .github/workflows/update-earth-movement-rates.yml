@@ -2,6 +2,8 @@ name: Update Earth Movement Rates
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "50 15 * * *"
 
 permissions:
   contents: write
