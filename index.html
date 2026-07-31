@@ -1777,13 +1777,10 @@ sidebar.on('content', function(e) {
         // HIDE ALL STATIONS (Only show EQ ledger)
         allMarkers.forEach(marker => map.removeLayer(marker));
         
-    } else if (e.id === 'gps') {
-        map.removeLayer(quakeLayer);
-        // Show GPS stations only
-        map.removeLayer(darkMode);
-        map.removeLayer(satellite);
-        map.removeLayer(quakeLayer);
-        topo.addTo(map);
+} else if (e.id === 'gps') {
+    map.removeLayer(quakeLayer);
+    // Show GPS stations only
+    setBaseMap("satellite");
         
         allMarkers.forEach(marker => {
             const station = stations.find(s => s.id.toLowerCase() === marker.stationID);
