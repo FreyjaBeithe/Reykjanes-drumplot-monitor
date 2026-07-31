@@ -1161,30 +1161,7 @@ function getEarthMovementArrow(nRate, eRate) {
 
     return formattedValue;
 }
- function getEarthMovementDemoRates(index) {
-  // Temporary demo trend rates in mm/yr.
-// Current trend window: EARTH_MOVEMENT_TREND_DAYS.
-// Final version: replace this with real GNSS-derived N / E / Up rates.
-
-    const demoHorizontalRates = [
-        { n: 2.4, e: 28.7 },      // east
-        { n: 16.8, e: 14.2 },     // northeast
-        { n: 31.5, e: 1.9 },      // north
-        { n: 18.6, e: -22.4 },    // northwest
-        { n: -1.7, e: -36.8 },    // west
-        { n: -14.9, e: -18.3 },   // southwest
-        { n: -29.6, e: 2.1 },     // south
-        { n: -12.7, e: 21.5 }     // southeast
-    ];
-
-    const horizontalRate = demoHorizontalRates[index % demoHorizontalRates.length];
-
-    return {
-        n: horizontalRate.n,
-        e: horizontalRate.e,
-        up: index % 2 === 0 ? 118.4 : -96.7
-    };
-}   
+ 
     const EARTH_MOVEMENT_TREND_DAYS = 90;
 
     const EARTH_MOVEMENT_RATES_JSON_URL = "./earth-movement-rates.json";
