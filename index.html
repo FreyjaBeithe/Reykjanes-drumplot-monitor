@@ -668,6 +668,8 @@ let selectedLedgerRow = null;
 // Stores the last GNSS station selected from Earth Movement.
 // Later, the GPS Deformation tab can use this to open the matching graph.
 let selectedGnssStationCode = null;
+// Prevents the Seismic tab from resetting map zoom when a seismic marker is clicked.
+let openingSeismicFromMarkerClick = false;   
     
 
 // Remember earthquake IDs we have already displayed
