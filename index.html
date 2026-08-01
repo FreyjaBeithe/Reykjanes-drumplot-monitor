@@ -852,21 +852,26 @@ if (selectedGnssStationCode) {
     }, 150);
 }
 
-} else if (e.id === 'home') {
-    // --- SEISMIC TAB OPENED: Show ONLY Red Dots ---
-    setBaseMap("satellite");
-    map.closePopup();
-    map.removeLayer(earthMovementLayer);
-    map.setView([64.90, -21.4], 7);
+   } else if (e.id === 'home') {
+        // --- SEISMIC TAB OPENED: Show ONLY Red Dots ---
+        setBaseMap("satellite");
+        map.closePopup();
+        map.removeLayer(earthMovementLayer);
 
-    allMarkers.forEach(marker => {
+        if (!openingSeismicFromMarkerClick) {
+            map.setView([64.90, -21.4], 7);
+        }
+
+        allMarkers.forEach(marker => {
             const station = stations.find(s => s.id.toLowerCase() === marker.stationID);
-            if (station && station.type === 'gps') {
-                map.removeLayer(marker);
-            } else {
+            if (station && station.type !== 'gps') {
                 marker.addTo(map);
+            } else {
+                map.removeLayer(marker);
             }
         });
+
+        openingSeismicFromMarkerClick = false;
 
     } else if (e.id === 'earthmovement') {
         // --- EARTH MOVEMENT TAB OPENED: Hide existing station layers for now ---
@@ -875,7 +880,6 @@ if (selectedGnssStationCode) {
         });
     }
 });
-
 // ==========================================
 // 7. GLOBAL MAP RESET FUNCTION
 // ==========================================
