@@ -2787,7 +2787,7 @@ const filteredQuakes = filterByTime(allEarthquakes, selectedHours)
             depth: parseFloat(item.properties.depth).toFixed(1),
             area: item.properties.region
         }))
-        .slice(0, 50);
+        .slice(0, 60);
 
     updateQuakeLedger(freshData);
     updateEarthquakeMap(filteredQuakes);
