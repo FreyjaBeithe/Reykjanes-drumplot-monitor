@@ -1865,20 +1865,19 @@ sidebar.on('content', function(e) {
     // AUTO-SWITCH LAYER LOGIC
     if (e.id === 'quakes') {
         // Switch to Dark Mode when Earthquake tab is opened
-        
-        map.removeLayer(topo);
-        map.removeLayer(satellite);
-        darkMode.addTo(map);
-          quakeLayer.addTo(map);
-        
-        // HIDE ALL STATIONS (Only show EQ ledger)
+        setBaseMap("dark");
+        quakeLayer.addTo(map);
+
+        // Hide all station markers on the Earthquake tab
         allMarkers.forEach(marker => map.removeLayer(marker));
-        
-} else if (e.id === 'gps') {
-    map.removeLayer(quakeLayer);
-    // Show GPS stations only
-    setBaseMap("satellite");
-        
+
+    } else if (e.id === 'gps') {
+        map.removeLayer(quakeLayer);
+        map.removeLayer(earthMovementLayer);
+
+        // Show GPS stations only
+        setBaseMap("satellite");
+
         allMarkers.forEach(marker => {
             const station = stations.find(s => s.id.toLowerCase() === marker.stationID);
             if (station && station.type === 'gps') {
@@ -1887,13 +1886,24 @@ sidebar.on('content', function(e) {
                 map.removeLayer(marker);
             }
         });
+
+    } else if (e.id === 'viewer3d') {
+        // 3D Viewer shell: clean dark map, no station markers yet
+        map.removeLayer(quakeLayer);
+        map.removeLayer(earthMovementLayer);
+        setBaseMap("dark");
+        map.setView([64.90, -21.4], 7);
+
+        allMarkers.forEach(marker => {
+            map.removeLayer(marker);
+        });
+
     } else {
         // Default behavior - show all non-GPS stations
-        map.removeLayer(darkMode);
-        map.removeLayer(satellite);
-            map.removeLayer(quakeLayer);
-        topo.addTo(map);
-        
+        map.removeLayer(quakeLayer);
+        map.removeLayer(earthMovementLayer);
+        setBaseMap("satellite");
+
         allMarkers.forEach(marker => {
             const station = stations.find(s => s.id.toLowerCase() === marker.stationID);
             if (station && station.type !== 'gps') {
