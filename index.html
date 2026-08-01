@@ -1941,15 +1941,19 @@ if (seismicSearchInput) {
             return;
         }
 
-        if (term.length === 3 || term.length === 4) {
-            const match = allMarkers.find(m => m.stationID === term);
-            if (match) {
-                sidebar.open('home'); 
-                hideWelcomeOverlay();
-                map.setView(match.getLatLng(), 9);
-                match.fire('click');
-            }
+     if (term.length === 3 || term.length === 4) {
+    const match = allMarkers.find(m => m.stationID === term);
+    if (match) {
+        const station = stations.find(s => s.id.toLowerCase() === term);
+
+        if (station && station.type !== 'gps') {
+            sidebar.open('home'); 
+            hideWelcomeOverlay();
+            map.setView(match.getLatLng(), 9);
+            match.fire('click');
         }
+    }
+}
     });
 
     if (clearSeismicBtn) {
