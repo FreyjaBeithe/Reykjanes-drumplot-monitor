@@ -2653,18 +2653,18 @@ sidebar.on('content', function(e) {
 } else if (e.id === 'earthmovement') {
     document.getElementById('sidebar').classList.remove('quake-mode');
 
-    // Hide existing Seismic/GPS station markers on Earth Movement tab for now
+    // Hide existing Seismic/GPS station markers on Earth Movement tab
     allMarkers.forEach(marker => {
         map.removeLayer(marker);
     });
 
-   // Add the dedicated Earth Movement layer
-if (!map.hasLayer(earthMovementLayer)) {
-    earthMovementLayer.addTo(map);
-}
+    // Add the dedicated Earth Movement layer
+    if (!map.hasLayer(earthMovementLayer)) {
+        earthMovementLayer.addTo(map);
+    }
 
-// Draw GNSS stations for the Earth Movement tab
-drawEarthMovementStations();
+    // Draw GNSS stations for the Earth Movement tab
+    drawEarthMovementStations();
 
     map.removeLayer(topo);
     map.removeLayer(satellite);
@@ -2673,6 +2673,28 @@ drawEarthMovementStations();
     if (!map.hasLayer(darkMode)) {
         map.addLayer(darkMode);
     }
+
+    setActiveMapStyleButton('dark');
+
+    if (isControlVisible) {
+        map.removeControl(quakeControlInstance);
+        map.removeControl(legendInstance);
+        isControlVisible = false;
+    }
+
+} else if (e.id === 'viewer3d') {
+    document.getElementById('sidebar').classList.remove('quake-mode');
+
+    map.removeLayer(quakeLayer);
+    map.removeLayer(earthMovementLayer);
+
+    allMarkers.forEach(marker => {
+        map.removeLayer(marker);
+    });
+
+    setBaseMap("dark");
+    setActiveMapStyleButton('dark');
+    map.setView([64.90, -21.4], 7);
 
     if (isControlVisible) {
         map.removeControl(quakeControlInstance);
@@ -2684,11 +2706,13 @@ drawEarthMovementStations();
     document.getElementById('sidebar').classList.remove('quake-mode');
     map.removeLayer(earthMovementLayer);
 
-   if (e.id === 'gps' || e.id === 'home') {
-    setBaseMap("satellite");
-} else {
-    setBaseMap("topo");
-}
+    if (e.id === 'gps' || e.id === 'home') {
+        setBaseMap("satellite");
+        setActiveMapStyleButton('satellite');
+    } else {
+        setBaseMap("topo");
+        setActiveMapStyleButton('topo');
+    }
 
     if (isControlVisible) {
         map.removeControl(quakeControlInstance);
@@ -2697,6 +2721,7 @@ drawEarthMovementStations();
     }
 }
 });
+
 // ----------------------------------------------------------
 // 4.1 Earthquake colour helper
 // Controls marker, ledger row and legend colours
