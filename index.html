@@ -2760,6 +2760,26 @@ sidebar.on('content', function(e) {
         isControlVisible = false;
     }
 
+} else if (e.id === 'information') {
+    document.getElementById('sidebar').classList.remove('quake-mode');
+
+    map.removeLayer(quakeLayer);
+    map.removeLayer(earthMovementLayer);
+
+    allMarkers.forEach(marker => {
+        map.removeLayer(marker);
+    });
+
+    setBaseMap("dark");
+    setActiveMapStyleButton('dark');
+    map.setView([64.90, -21.4], 7);
+
+    if (isControlVisible) {
+        map.removeControl(quakeControlInstance);
+        map.removeControl(legendInstance);
+        isControlVisible = false;
+    }
+
 } else {
     document.getElementById('sidebar').classList.remove('quake-mode');
     map.removeLayer(earthMovementLayer);
