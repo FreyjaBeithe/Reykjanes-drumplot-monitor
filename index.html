@@ -1607,13 +1607,13 @@ const arrowTransform = arrowRotation === null ? "" : "transform:rotate(" + arrow
 
             const arrowIconHtml =
                 '<div style="' +
-                    'width:34px;' +
-                    'height:24px;' +
+                    'width:30px;' +
+                    'height:20px;' +
                     'display:flex;' +
                     'align-items:center;' +
                     'justify-content:center;' +
                     'color:' + arrowColor + ';' +
-                    'font-size:26px;' +
+                    'font-size:22px;' +
                     'font-weight:bold;' +
                     'line-height:1;' +
                     'transform-origin:center center;' +
@@ -1626,8 +1626,8 @@ const arrowTransform = arrowRotation === null ? "" : "transform:rotate(" + arrow
             const arrowIcon = L.divIcon({
                 className: "earth-movement-arrow-icon",
                 html: arrowIconHtml,
-                iconSize: [34, 24],
-                iconAnchor: [17, 12]
+                iconSize: [30, 20],
+                iconAnchor: [15, 10]
             });
 
             L.marker([station.lat, station.lon], {
