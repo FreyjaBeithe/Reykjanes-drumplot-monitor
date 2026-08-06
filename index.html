@@ -2893,38 +2893,62 @@ function filterByTime(quakes, hours) {
 // ----------------------------------------------------------
 function applyEarthquakeFilters() {
 
-const timeFilter = document.getElementById('timeFilter');
-const magFilter = document.getElementById('magFilter');
-const statusFilter = document.getElementById('statusFilter');
-const areaFilter = document.getElementById('areaFilter');
+    const timeFilter = document.getElementById('timeFilter');
+    const magFilter = document.getElementById('magFilter');
+    const statusFilter = document.getElementById('statusFilter');
+    const areaFilter = document.getElementById('areaFilter');
 
-const selectedHours = timeFilter ? parseFloat(timeFilter.value) : 24;
-const selectedMag = magFilter ? parseFloat(magFilter.value) : -2;
-const selectedStatus = statusFilter ? statusFilter.value : "live";
-const selectedArea = areaFilter ? areaFilter.value : "All regions";
+    const selectedHours = timeFilter ? parseFloat(timeFilter.value) : 24;
 
-const filteredQuakes = filterByTime(allEarthquakes, selectedHours)
-    .filter(item => {
-    const displayMag = parseFloat(parseFloat(item.properties.magnitude).toFixed(1));
+    // Magnitude filter safety:
+    // Treat -2, "all", "All", blank, or anything non-numeric as All magnitudes.
+    const rawMagValue = magFilter ? magFilter.value : "-2";
+    const parsedMagValue = parseFloat(rawMagValue);
+    const selectedMag = Number.isNaN(parsedMagValue) ? -2 : parsedMagValue;
 
-    if (selectedMag === -2) return true;
+    // IMO now uses evaluation_mode values: "manual" and "automatic".
+    // "live" means show all currently returned events.
+    const selectedStatus = statusFilter ? statusFilter.value : "live";
+    const selectedArea = areaFilter ? areaFilter.value : "All regions";
 
-    if (selectedMag === 5) {
-        return displayMag >= 5;
-    }
+    const filteredQuakes = filterByTime(allEarthquakes, selectedHours)
+        .filter(item => {
+            const displayMag = parseFloat(parseFloat(item.properties.magnitude).toFixed(1));
 
-    return displayMag >= selectedMag && displayMag < selectedMag + 1;
-})
-   .filter(item => {
-    if (selectedStatus === "live") return true;
+            // All magnitudes
+            if (selectedMag === -2) return true;
 
-    return item.properties.evaluation_mode === "manual";
-})
-    .filter(item => {
-        if (selectedArea === "All regions") return true;
-        return item.properties.region === selectedArea;
-    })
-    .sort((a, b) => new Date(b.properties.time) - new Date(a.properties.time));
+            // M5+
+            if (selectedMag === 5) {
+                return displayMag >= 5;
+            }
+
+            // Magnitude band, e.g. M1.0 to M1.9
+            return displayMag >= selectedMag && displayMag < selectedMag + 1;
+        })
+        .filter(item => {
+            const mode = item.properties.evaluation_mode;
+
+            // Live events = everything returned by IMO
+            if (selectedStatus === "live" || selectedStatus === "all") return true;
+
+            // Current IMO wording
+            if (selectedStatus === "manual") return mode === "manual";
+            if (selectedStatus === "automatic") return mode === "automatic";
+
+            // Backwards-compatible old wording, just in case any old dropdown values remain
+            if (selectedStatus === "reviewed" || selectedStatus === "confirmed") {
+                return mode === "manual";
+            }
+
+            return true;
+        })
+        .filter(item => {
+            if (selectedArea === "All regions") return true;
+            return item.properties.region === selectedArea;
+        })
+        .sort((a, b) => new Date(b.properties.time) - new Date(a.properties.time));
+
     const maxMag = filteredQuakes.length
         ? Math.max(...filteredQuakes.map(item => parseFloat(item.properties.magnitude))).toFixed(1)
         : '0.0';
@@ -2932,7 +2956,6 @@ const filteredQuakes = filterByTime(allEarthquakes, selectedHours)
     updateQuakeCountBox(filteredQuakes.length, maxMag);
 
     const freshData = filteredQuakes
-        .sort((a, b) => Date.parse(b.properties.time) - Date.parse(a.properties.time))
         .map(item => ({
             eventId: item.properties.event_id,
             time: new Date(item.properties.time).toLocaleTimeString('en-GB', {
@@ -2945,10 +2968,20 @@ const filteredQuakes = filterByTime(allEarthquakes, selectedHours)
             depth: parseFloat(item.properties.depth).toFixed(1),
             area: item.properties.region
         }))
-        .slice(0, 60);
+        .slice(0, 65);
 
     updateQuakeLedger(freshData);
     updateEarthquakeMap(filteredQuakes);
+
+    console.log("Earthquake filters applied:", {
+        totalFetched: allEarthquakes.length,
+        shown: filteredQuakes.length,
+        selectedHours,
+        rawMagValue,
+        selectedMag,
+        selectedStatus,
+        selectedArea
+    });
 }
 // ----------------------------------------------------------
 //  4.6 Earthquake activity counter
