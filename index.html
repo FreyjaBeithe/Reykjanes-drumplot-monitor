@@ -2735,6 +2735,12 @@ sidebar.on('closing', function() {
 });
 
 sidebar.on('content', function(e) {
+   const mapElement = document.getElementById('map');
+
+   if (mapElement && e.id !== 'information') {
+       mapElement.classList.remove('information-image-mode');
+   }
+
    if (e.id === 'quakes') {
         hideInformationImageOverlay();   
     document.getElementById('sidebar').classList.add('quake-mode');
