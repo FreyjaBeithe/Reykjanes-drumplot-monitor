@@ -2372,57 +2372,71 @@ if (mag < 0) {
  async function fetchEarthquakeData() {
     const ledger = document.getElementById('quakes-ledger-body');
     const CACHE_KEY = 'quake_data_cache';
-    // rolling time on ledger for new eq's
-const now = new Date();
-const start = new Date(now.getTime() - 48 * 60 * 60 * 1000);
 
-const url =
-  'https://api.vedur.is/quakes/events?' +
-  'start_time=' + encodeURIComponent(start.toISOString()) +
-  '&end_time=' + encodeURIComponent(now.toISOString()) +
-  '&depth_min=0&depth_max=25&size_min=-2&size_max=7';
+    // Rolling fetch window for live earthquake data
+    const now = new Date();
+    const start = new Date(now.getTime() - 48 * 60 * 60 * 1000);
 
-console.log('IMO quake URL:', url);
-    
-try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error('API Error');
-    const json = await response.json();
+    // IMO's own earthquake map now sends a broad Iceland polygon.
+    // Without this polygon, the API currently returns a much smaller live event set.
+    const icelandPolygon = 'POLYGON((-32.29664 72.44958, -32.29664 52.79541, 15.56576 52.79541, 15.56576 72.44958, -32.29664 72.44958))';
 
-    allEarthquakes = json.features.filter(item => {
-        const coords = item.geometry.coordinates;
-        const lon = coords[0];
-        const lat = coords[1];
+    const url =
+        'https://api.vedur.is/quakes/events?' +
+        'start_time=' + encodeURIComponent(start.toISOString()) +
+        '&end_time=' + encodeURIComponent(now.toISOString()) +
+        '&depth_min=0&depth_max=25&size_min=-2&size_max=7' +
+        '&polygon=' + encodeURIComponent(icelandPolygon) +
+        '&system=seiscomp';
 
-        return (
-            lat >= 62.80 &&
-            lat <= 67.20 &&
-            lon >= -30.00 &&
-            lon <= -13.00
-        );
-    });
+    console.log('IMO quake URL:', url);
 
-    updateRegionDropdownFromData();
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('API Error');
 
-    if (!hasCompletedInitialEarthquakeLoad) {
-        allEarthquakes.forEach(item => {
-            const firstLoadEventId = item.properties.event_id;
-            if (firstLoadEventId) {
-                seenEarthquakeIds.add(firstLoadEventId);
-            }
+        const json = await response.json();
+        const features = Array.isArray(json.features) ? json.features : [];
+
+        allEarthquakes = features.filter(item => {
+            if (!item.geometry || !item.geometry.coordinates) return false;
+
+            const coords = item.geometry.coordinates;
+            const lon = coords[0];
+            const lat = coords[1];
+
+            return (
+                lat >= 62.80 &&
+                lat <= 67.20 &&
+                lon >= -30.00 &&
+                lon <= -13.00
+            );
         });
 
-        hasCompletedInitialEarthquakeLoad = true;
-    }
+        console.log('IMO quake features received:', features.length);
+        console.log('Volcano Watchers quakes after Iceland bounds filter:', allEarthquakes.length);
 
-    quakeLayer.clearLayers();
-    Object.keys(quakeMarkers).forEach(key => delete quakeMarkers[key]);
+        updateRegionDropdownFromData();
 
-    applyEarthquakeFilters();
-      
+        if (!hasCompletedInitialEarthquakeLoad) {
+            allEarthquakes.forEach(item => {
+                const firstLoadEventId = item.properties.event_id;
+                if (firstLoadEventId) {
+                    seenEarthquakeIds.add(firstLoadEventId);
+                }
+            });
+
+            hasCompletedInitialEarthquakeLoad = true;
+        }
+
+        quakeLayer.clearLayers();
+        Object.keys(quakeMarkers).forEach(key => delete quakeMarkers[key]);
+
+        applyEarthquakeFilters();
+
     } catch (e) {
         console.warn("Fetch failed, loading from cache:", e);
-        
+
         // FALLBACK: Load whatever was saved last time
         const cachedData = localStorage.getItem(CACHE_KEY);
         if (cachedData) {
