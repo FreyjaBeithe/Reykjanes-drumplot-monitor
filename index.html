@@ -769,11 +769,16 @@ let informationImageOverlay = null;
  function showInformationImageOverlay() {
     let existingOverlay = document.getElementById('information-image-overlay');
 
-    if (existingOverlay) {
-        existingOverlay.style.display = 'flex';
-        return;
+   if (existingOverlay) {
+    existingOverlay.style.display = 'flex';
+
+    const mapElement = document.getElementById('map');
+    if (mapElement) {
+        mapElement.classList.add('information-image-mode');
     }
 
+    return;
+}
     const overlay = document.createElement('div');
     overlay.id = 'information-image-overlay';
 
