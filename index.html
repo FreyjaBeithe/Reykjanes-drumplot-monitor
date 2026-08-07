@@ -803,10 +803,11 @@ img.style.border = 'none';
 img.style.boxShadow = 'none';
     overlay.appendChild(img);
 
-    const mapElement = document.getElementById('map');
-    if (mapElement) {
-        mapElement.appendChild(overlay);
-    }
+   const mapElement = document.getElementById('map');
+if (mapElement) {
+    mapElement.classList.add('information-image-mode');
+    mapElement.appendChild(overlay);
+}
 }
 
 function hideInformationImageOverlay() {
