@@ -456,7 +456,11 @@
 #earthmovement .leaflet-sidebar-pane {
     background: #1f2f35;
 }       
-/* This is the final closing bracket for the CSS section */
+
+/* VW-041 Step 1B-6L: hide map controls on Information image tab */
+#map.information-image-mode .leaflet-control-container {
+    display: none;
+}
         
 </style>
 </head>
