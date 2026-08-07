@@ -762,37 +762,55 @@ let selectedLedgerRow = null;
 let selectedGnssStationCode = null;
  // Information tab image overlay
 let informationImageOverlay = null;  
-  function showInformationImageOverlay() {
-    if (informationImageOverlay) {
-        if (!map.hasLayer(informationImageOverlay)) {
-            informationImageOverlay.addTo(map);
-        }
+ function showInformationImageOverlay() {
+    let existingOverlay = document.getElementById('information-image-overlay');
+
+    if (existingOverlay) {
+        existingOverlay.style.display = 'flex';
         return;
     }
 
-    const imageUrl = 'volcano-watchers-info-image.png';
+    const overlay = document.createElement('div');
+    overlay.id = 'information-image-overlay';
 
-    // Image placement over Iceland on the Information tab.
-    // These bounds can be adjusted after visual testing.
-    const imageBounds = [
-        [63.00, -25.80],
-        [66.90, -13.20]
-    ];
+    overlay.style.position = 'absolute';
+    overlay.style.left = '0';
+    overlay.style.top = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.zIndex = '900';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.background = '#202020';
+    overlay.style.pointerEvents = 'none';
 
-    informationImageOverlay = L.imageOverlay(imageUrl, imageBounds, {
-        opacity: 0.95,
-        interactive: false
-    });
+    const img = document.createElement('img');
+    img.src = 'volcano-watchers-info-image.png';
+    img.alt = 'Volcano Watchers Iceland outline';
+    img.style.maxWidth = '74%';
+    img.style.maxHeight = '84%';
+    img.style.objectFit = 'contain';
+    img.style.border = '1px solid rgba(255, 179, 0, 0.25)';
+    img.style.boxShadow = '0 0 28px rgba(0, 0, 0, 0.65)';
 
-    informationImageOverlay.addTo(map);
+    overlay.appendChild(img);
+
+    const mapElement = document.getElementById('map');
+    if (mapElement) {
+        mapElement.appendChild(overlay);
+    }
 }
 
 function hideInformationImageOverlay() {
-    if (informationImageOverlay && map.hasLayer(informationImageOverlay)) {
-        map.removeLayer(informationImageOverlay);
+    const existingOverlay = document.getElementById('information-image-overlay');
+
+    if (existingOverlay) {
+        existingOverlay.style.display = 'none';
     }
-}  
-// Prevents the Seismic tab from resetting map zoom when a seismic marker is clicked.
+}
+
+    // Prevents the Seismic tab from resetting map zoom when a seismic marker is clicked.
 let openingSeismicFromMarkerClick = false;   
     
 
