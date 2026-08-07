@@ -2705,6 +2705,7 @@ sidebar.on('closing', function() {
 
 sidebar.on('content', function(e) {
    if (e.id === 'quakes') {
+        hideInformationImageOverlay();   
     document.getElementById('sidebar').classList.add('quake-mode');
 
     // Hide Earth Movement GNSS dots when opening Earthquakes tab
@@ -2755,6 +2756,7 @@ sidebar.on('content', function(e) {
         }
 
 } else if (e.id === 'earthmovement') {
+        hideInformationImageOverlay();   
     document.getElementById('sidebar').classList.remove('quake-mode');
 
     // Hide existing Seismic/GPS station markers on Earth Movement tab
@@ -2787,6 +2789,7 @@ sidebar.on('content', function(e) {
     }
 
 } else if (e.id === 'viewer3d') {
+         hideInformationImageOverlay();  
     document.getElementById('sidebar').classList.remove('quake-mode');
 
     map.removeLayer(quakeLayer);
@@ -2820,6 +2823,8 @@ sidebar.on('content', function(e) {
     setActiveMapStyleButton('dark');
     map.setView([64.90, -21.4], 7);
 
+    showInformationImageOverlay();
+
     if (isControlVisible) {
         map.removeControl(quakeControlInstance);
         map.removeControl(legendInstance);
@@ -2827,6 +2832,7 @@ sidebar.on('content', function(e) {
     }
 
 } else {
+         hideInformationImageOverlay();  
     document.getElementById('sidebar').classList.remove('quake-mode');
     map.removeLayer(earthMovementLayer);
 
