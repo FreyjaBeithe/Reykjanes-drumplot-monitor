@@ -761,7 +761,37 @@ let selectedLedgerRow = null;
 // Later, the GPS Deformation tab can use this to open the matching graph.
 let selectedGnssStationCode = null;
  // Information tab image overlay
-let informationImageOverlay = null;   
+let informationImageOverlay = null;  
+  function showInformationImageOverlay() {
+    if (informationImageOverlay) {
+        if (!map.hasLayer(informationImageOverlay)) {
+            informationImageOverlay.addTo(map);
+        }
+        return;
+    }
+
+    const imageUrl = 'volcano-watchers-info-image.png';
+
+    // Image placement over Iceland on the Information tab.
+    // These bounds can be adjusted after visual testing.
+    const imageBounds = [
+        [63.00, -25.80],
+        [66.90, -13.20]
+    ];
+
+    informationImageOverlay = L.imageOverlay(imageUrl, imageBounds, {
+        opacity: 0.95,
+        interactive: false
+    });
+
+    informationImageOverlay.addTo(map);
+}
+
+function hideInformationImageOverlay() {
+    if (informationImageOverlay && map.hasLayer(informationImageOverlay)) {
+        map.removeLayer(informationImageOverlay);
+    }
+}  
 // Prevents the Seismic tab from resetting map zoom when a seismic marker is clicked.
 let openingSeismicFromMarkerClick = false;   
     
