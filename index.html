@@ -2379,13 +2379,13 @@ if (mag < 0) {
 } else if (mag < 1) {
     radius = 5;
 } else if (mag < 2) {
-    radius = 6;
+    radius = 7;
 } else if (mag < 3) {
-    radius = 8;
+    radius = 9;
 } else if (mag < 4) {
-    radius = 10;
-} else {
     radius = 12;
+} else {
+    radius = 14;
 }
         const marker = L.circleMarker([lat, lon], {
             radius: radius,
