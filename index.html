@@ -1950,8 +1950,10 @@ stations.forEach(st => {
         } else {
           openingSeismicFromMarkerClick = true;
           sidebar.open('home');
-            const secureDrumURL = `https://wsrv.nl/?url=http://hraun.vedur.is/ja/drumplot/drumplot/${st.url}_highpass_2.0.png&noproxy`;
-            const secureTremorURL = `https://wsrv.nl/?url=http://hraun.vedur.is/ja/oroi/${st.url}.gif&noproxy`;
+            const cacheBuster = Date.now();
+
+const secureDrumURL = `https://wsrv.nl/?url=${encodeURIComponent(`http://hraun.vedur.is/ja/drumplot/drumplot/${st.url}_highpass_2.0.png?v=${cacheBuster}`)}&noproxy`;
+const secureTremorURL = `https://wsrv.nl/?url=${encodeURIComponent(`http://hraun.vedur.is/ja/oroi/${st.url}.gif?v=${cacheBuster}`)}&noproxy`;
             
             document.getElementById('station-data').innerHTML = `
                 <div style="padding:10px;">
