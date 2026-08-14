@@ -2727,69 +2727,81 @@ const QuakeControl = L.Control.extend({
         // Map your region array to HTML options
         const regionOptions = regions.map(r => `<option value="${r}">${r}</option>`).join('');
 
-        // control bar option 
-      div.innerHTML = `
+   // control bar option 
+div.innerHTML = `
 
     <span id="icelandClock" style="
-    background:#111;
-    border:1px solid #444;
-    border-radius:5px;
-    padding:3px 8px;
-    font-weight:bold;
-    color:#ffffff;
-    min-width:125px;
-    display:inline-block;
-    text-align:center;
-">
-    🇮🇸 --:--:--
-</span>
-<span id="quakeCountBox" style="
-    background:#111;
-    border:1px solid #444;
-    border-radius:5px;
-    padding:3px 8px;
-    font-weight:bold;
-    color:#ffffff;
-    min-width:170px;
-    display:inline-block;
-    text-align:center;
-">
-    Fetching data…
-</span>
-              <label>⏰ 
-                <select id="timeFilter">
-                    <option value="0.5">30m</option>
-                    <option value="1">1h</option>
-                    <option value="3">3h</option>
-                    <option value="6">6h</option>
-                    <option value="12">12h</option>
-                    <option value="24" selected>24h</option>
-                 <option value="48">48 hours</option>
-                    </select>
-            </label>
-            <label>📊 
-               <select id="magFilter"> 
-    <option value="-2">All M</option>
-    <option value="1">M1</option>
-    <option value="2">M2</option>
-    <option value="3">M3</option>
-    <option value="4">M4</option>
-    <option value="5">M5+</option>
-</select>
-            </label>
-            <label>Status:
-                <select id="statusFilter">
-                    <option value="live">Live events</option>
-                    <option value="reviewed">Reviewed only</option>
-                </select>
-            </label>
-            <label>📍 
-                <select id="areaFilter">${regionOptions}</select>
-            </label>
-            <label>
-                <input type="checkbox" id="audioToggle"> 🔔 Alert M3+
-            </label>
-        `;
+        background:#235a70;
+        border:1px solid #183f4f;
+        border-radius:5px;
+        padding:4px 9px;
+        font-weight:800;
+        color:#111111;
+        min-width:125px;
+        display:inline-block;
+        text-align:center;
+        font-size:13px;
+    ">
+        UTC --:--:--
+    </span>
+
+    <span id="quakeCountBox" style="
+        background:#235a70;
+        border:1px solid #183f4f;
+        border-radius:5px;
+        padding:4px 9px;
+        font-weight:800;
+        color:#111111;
+        min-width:170px;
+        display:inline-block;
+        text-align:center;
+        font-size:13px;
+    ">
+        Fetching data…
+    </span>
+
+    <label style="font-weight:800; color:#ffffff;">
+        Time:
+        <select id="timeFilter">
+            <option value="0.5">30m</option>
+            <option value="1">1h</option>
+            <option value="3">3h</option>
+            <option value="6">6h</option>
+            <option value="12">12h</option>
+            <option value="24" selected>24h</option>
+            <option value="48">48 hours</option>
+        </select>
+    </label>
+
+    <label style="font-weight:800; color:#ffffff;">
+        Mag:
+        <select id="magFilter"> 
+            <option value="-2">All M</option>
+            <option value="1">M1</option>
+            <option value="2">M2</option>
+            <option value="3">M3</option>
+            <option value="4">M4</option>
+            <option value="5">M5+</option>
+        </select>
+    </label>
+
+    <label style="font-weight:800; color:#ffffff;">
+        Status:
+        <select id="statusFilter">
+            <option value="live">Live events</option>
+            <option value="reviewed">Reviewed only</option>
+        </select>
+    </label>
+
+    <label style="font-weight:800; color:#ffffff;">
+        Region:
+        <select id="areaFilter">${regionOptions}</select>
+    </label>
+
+    <label style="font-weight:800; color:#ffffff;">
+        <input type="checkbox" id="audioToggle"> Alert M3+
+    </label>
+`;
         L.DomEvent.disableClickPropagation(div);
         return div;
     }
