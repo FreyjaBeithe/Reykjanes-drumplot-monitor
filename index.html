@@ -2702,40 +2702,43 @@ let regions = ["All regions"];
 const LegendControl = L.Control.extend({
     onAdd: function(map) {
         const div = L.DomUtil.create('div', 'quake-legend-box');
-      div.innerHTML = `
-  <div class="legend-header" style="
-    text-align:center;
-    font-size:13px;
-    letter-spacing:1px;
-    text-transform:uppercase;
-">
-    MAGNITUDE
-</div>
 
-    <div class="legend-item">
-        <span style="color:#2196f3; font-size:18px;">●</span> &lt; M0
-    </div>
+        div.innerHTML = `
+            <div class="legend-header" style="
+                text-align:center;
+                font-size:13px;
+                letter-spacing:1px;
+                text-transform:uppercase;
+                margin-bottom:8px;
+            ">
+                MAGNITUDE
+            </div>
 
-    <div class="legend-item">
-        <span style="color:#8bc34a; font-size:18px;">●</span> M0+
-    </div>
+            <div class="legend-item">
+                <span style="color:#2196f3; font-size:14px; display:inline-block; width:24px; text-align:center;">●</span> &lt; M0
+            </div>
 
-    <div class="legend-item">
-        <span style="color:#4cbb17; font-size:18px;">●</span> M1+
-    </div>
+            <div class="legend-item">
+                <span style="color:#8bc34a; font-size:15px; display:inline-block; width:24px; text-align:center;">●</span> M0+
+            </div>
 
-    <div class="legend-item">
-        <span style="color:#fbc02d; font-size:18px;">●</span> M2+
-    </div>
+            <div class="legend-item">
+                <span style="color:#4cbb17; font-size:17px; display:inline-block; width:24px; text-align:center;">●</span> M1+
+            </div>
 
-    <div class="legend-item">
-        <span style="color:#ef6c00; font-size:18px;">●</span> M3+
-    </div>
+            <div class="legend-item">
+                <span style="color:#fbc02d; font-size:19px; display:inline-block; width:24px; text-align:center;">●</span> M2+
+            </div>
 
-    <div class="legend-item">
-        <span style="color:#ff0000; font-size:18px;">●</span> M4+
-    </div>
-`;
+            <div class="legend-item">
+                <span style="color:#ef6c00; font-size:21px; display:inline-block; width:24px; text-align:center;">●</span> M3+
+            </div>
+
+            <div class="legend-item">
+                <span style="color:#ff0000; font-size:23px; display:inline-block; width:24px; text-align:center;">●</span> M4+
+            </div>
+        `;
+
         return div;
     }
 });
