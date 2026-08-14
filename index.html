@@ -472,7 +472,59 @@
     font-weight: 700;
     color: #111111 !important;
 }
+/* VW-042: Earthquake control bar livestream polish */
+.leaflet-control select,
+.leaflet-control button,
+.leaflet-control input,
+.leaflet-control label,
+.leaflet-control div {
+    font-size: 13px;
+    font-weight: 700;
+}
 
+/* Main earthquake toolbar outer surround */
+.quake-control-bar,
+.earthquake-control-bar,
+#quake-control-bar,
+#earthquake-control-bar {
+    background: #151515 !important;
+    border-radius: 7px !important;
+    padding: 8px 10px !important;
+}
+
+/* Earthquake toolbar inner boxes */
+#utc-clock,
+#quake-count-box,
+#timeFilter,
+#magFilter,
+#statusFilter,
+#areaFilter {
+    background: #52657a !important;
+    color: #111111 !important;
+    border: 1px solid #2f3b47 !important;
+    border-radius: 5px !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+}
+
+/* Dropdown text */
+#timeFilter option,
+#magFilter option,
+#statusFilter option,
+#areaFilter option {
+    background: #52657a;
+    color: #111111;
+    font-weight: 700;
+}
+
+/* M3 alert label area */
+#earthquake-alert-label,
+#quake-alert-label,
+#audioToggle {
+    color: #111111 !important;
+    font-weight: 800 !important;
+}
+        
 </style>
 </head>
 <body>
