@@ -1,95 +1,95 @@
 {
-  "generatedAt": "2026-08-20T16:16:41.050Z",
+  "generatedAt": "2026-08-21T16:15:11.087Z",
   "source": "IMO/Vedur GNSS .NEU files via VolcanoWatchers GitHub Action",
   "trendDays": 90,
   "rates": {
     "seng": {
-      "n": 36,
-      "e": 52.1,
-      "up": 199.6,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 44.6,
+      "e": 55,
+      "up": 203.4,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "gusk": {
-      "n": 2.9,
-      "e": 21.1,
-      "up": 32.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -15.3,
+      "e": 30.3,
+      "up": 15.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "gjog": {
-      "n": 3.3,
-      "e": 23,
-      "up": 27.5,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 2.4,
+      "e": 26.1,
+      "up": 3.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "afst": {
-      "n": -5.6,
-      "e": 25.8,
-      "up": 34.1,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -1.8,
+      "e": 35.1,
+      "up": 30.2,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "moha": {
-      "n": -9.2,
-      "e": 42.7,
-      "up": 8.9,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 2.8,
+      "e": 51.6,
+      "up": 29.6,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "akur": {
-      "n": 8.3,
-      "e": 2.6,
-      "up": 12.7,
+      "n": 9,
+      "e": 2.7,
+      "up": 15.8,
       "startYear": 2025.9986,
-      "endYear": 2026.6315,
-      "daysApprox": 231.2
+      "endYear": 2026.6342,
+      "daysApprox": 232.2
     },
     "alfd": {
-      "n": 0.7,
-      "e": 25.5,
-      "up": 61.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -0.6,
+      "e": 26.5,
+      "up": 71,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "arho": {
-      "n": 1.2,
-      "e": 14.4,
-      "up": 5.2,
-      "startYear": 2025.9932,
-      "endYear": 2026.6315,
-      "daysApprox": 233.1
+      "n": -16.8,
+      "e": 29.7,
+      "up": 6.6,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "aust": {
-      "n": -98.4,
-      "e": -69.3,
-      "up": 229.3,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -82.1,
+      "e": -50.1,
+      "up": 238.4,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "bald": {
-      "n": -7,
-      "e": 23.2,
-      "up": 92.9,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -16.8,
+      "e": 28.6,
+      "up": 76.4,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "baug": {
-      "n": -19,
-      "e": 26,
-      "up": 6.1,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -9.3,
+      "e": 24.3,
+      "up": 9,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "bjac": {
       "n": 16.5,
@@ -100,348 +100,348 @@
       "daysApprox": 231.2
     },
     "bjtv": {
-      "n": 1.7,
-      "e": 16.7,
-      "up": 8.2,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -1.3,
+      "e": 23.7,
+      "up": 35.4,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "brik": {
-      "n": -6.7,
-      "e": 16.9,
-      "up": 16,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -4.1,
+      "e": 26,
+      "up": 12.9,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "brtt": {
-      "n": 0.4,
-      "e": 39.3,
-      "up": 15.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 2.7,
+      "e": 40.8,
+      "up": 16.1,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "budh": {
-      "n": -14.3,
-      "e": 27.3,
-      "up": 52.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -8.4,
+      "e": 35,
+      "up": 59.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "dync": {
-      "n": 8.3,
-      "e": 29.6,
-      "up": 65.2,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 8.4,
+      "e": 33.3,
+      "up": 64.2,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "dyng": {
-      "n": 2.7,
-      "e": 41.5,
-      "up": 72.5,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 4.1,
+      "e": 37.8,
+      "up": 77,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "dyny": {
-      "n": 2.8,
-      "e": 25.3,
-      "up": 68.6,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 5.2,
+      "e": 27.4,
+      "up": 84.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "eldc": {
-      "n": -21.1,
-      "e": -48.5,
-      "up": 134.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -15.2,
+      "e": -38.5,
+      "up": 149.4,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "eley": {
-      "n": 0.4,
-      "e": 27.2,
-      "up": -18.1,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 5.1,
+      "e": 36.8,
+      "up": -24.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "entc": {
-      "n": -12.2,
-      "e": 16.4,
-      "up": 91.5,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -15.2,
+      "e": 11.2,
+      "up": 93.8,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "fagc": {
-      "n": -24.5,
-      "e": 29.1,
-      "up": 55.3,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -21.8,
+      "e": 30.2,
+      "up": 60.6,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "fagd": {
-      "n": 1.7,
-      "e": 45.7,
-      "up": 32.8,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 11.9,
+      "e": 45.4,
+      "up": 45.4,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "fedg": {
-      "n": -0.3,
-      "e": 17.4,
-      "up": 46.3,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 10.8,
+      "e": 8.3,
+      "up": 38.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "fefc": {
-      "n": -6.7,
-      "e": 62,
-      "up": 55.6,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -12.5,
+      "e": 71.9,
+      "up": 76.8,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "fim2": {
-      "n": -17.9,
-      "e": 16.7,
-      "up": 57.6,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -22.2,
+      "e": 16.4,
+      "up": 46.8,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "fjoc": {
-      "n": 5.3,
-      "e": 21.2,
-      "up": 55.7,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 8.1,
+      "e": 23.6,
+      "up": 65.4,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "ftey": {
-      "n": -8.4,
-      "e": 30.1,
-      "up": 29.9,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -9.5,
+      "e": 37.2,
+      "up": 31,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "gake": {
-      "n": -25.6,
-      "e": 38.4,
-      "up": 6.6,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -13.8,
+      "e": 38,
+      "up": 33.9,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "gevk": {
-      "n": -68.1,
-      "e": 33.3,
-      "up": 89.3,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -66.1,
+      "e": 41.8,
+      "up": 98.8,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "gfel": {
-      "n": -1.1,
-      "e": 13.7,
-      "up": 35.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 4.4,
+      "e": 31.9,
+      "up": 47.4,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "gfum": {
-      "n": -117.9,
-      "e": 70.3,
-      "up": 53,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -63.4,
+      "e": 1.3,
+      "up": -13.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "gigo": {
-      "n": 13.3,
-      "e": 8.4,
-      "up": 84.9,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 13.6,
+      "e": 6.6,
+      "up": 76.9,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "gler": {
-      "n": -7.3,
-      "e": 22.5,
-      "up": 62.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -2.9,
+      "e": 23.2,
+      "up": 57.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "gmey": {
-      "n": -9.2,
-      "e": 25.7,
-      "up": 36.7,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -21.2,
+      "e": 37.6,
+      "up": 18.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "gola": {
-      "n": -27.9,
-      "e": -9.2,
-      "up": 52.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -22.8,
+      "e": 0.9,
+      "up": 64.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "gonh": {
-      "n": 9.3,
-      "e": 50,
-      "up": 30.2,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 9,
+      "e": 64.3,
+      "up": 44,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "gran": {
-      "n": -16,
-      "e": 28.6,
-      "up": 20.2,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -10.8,
+      "e": 28.4,
+      "up": 38.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "grfs": {
-      "n": -19.4,
-      "e": 32.2,
-      "up": 56.8,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -23.8,
+      "e": 26.2,
+      "up": 71.2,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "griv": {
-      "n": -41.3,
-      "e": 33.9,
-      "up": 190.5,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -40.9,
+      "e": 40,
+      "up": 205.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "grvm": {
-      "n": -65.4,
-      "e": 58.3,
-      "up": 99.6,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -67.5,
+      "e": 67,
+      "up": 116.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "grvv": {
-      "n": -75.7,
-      "e": 53.5,
-      "up": 108.8,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -76.1,
+      "e": 61.1,
+      "up": 122.8,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hafc": {
-      "n": 12.4,
-      "e": -4.9,
-      "up": 38,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 16.9,
+      "e": 3.5,
+      "up": 48.4,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hafs": {
-      "n": 16.1,
-      "e": 7.9,
-      "up": 134.1,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 11.6,
+      "e": 9.7,
+      "up": 134.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "haud": {
-      "n": -13.2,
-      "e": 19.4,
-      "up": 67.1,
+      "n": -15.4,
+      "e": 19.1,
+      "up": 69.2,
       "startYear": 2026.3849,
       "endYear": 2026.6315,
       "daysApprox": 90.1
     },
     "helc": {
-      "n": -14.2,
-      "e": 18.9,
-      "up": 31.6,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -9.6,
+      "e": 21.4,
+      "up": 32.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "helf": {
-      "n": -7.1,
-      "e": 28.8,
-      "up": 35.1,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -3.2,
+      "e": 36.4,
+      "up": 14.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "herv": {
-      "n": 16.9,
-      "e": 27,
-      "up": 17.3,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -4.6,
+      "e": 41.1,
+      "up": 33.2,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hesa": {
-      "n": -3.9,
-      "e": 24.9,
-      "up": 58.8,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -3.2,
+      "e": 26.7,
+      "up": 61.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hita": {
-      "n": 2.6,
-      "e": 20.2,
-      "up": 34.1,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -11.6,
+      "e": 23.6,
+      "up": 55.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hlid": {
-      "n": 0.4,
-      "e": 22.8,
-      "up": 28.7,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 4.9,
+      "e": 27,
+      "up": 21.2,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hotj": {
-      "n": -27.5,
-      "e": 29.4,
-      "up": 31.2,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -13.5,
+      "e": 26.3,
+      "up": 29.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hrac": {
-      "n": -22.4,
-      "e": 25.7,
-      "up": -42.5,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -20,
+      "e": 22.9,
+      "up": 20.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hrag": {
-      "n": 27.6,
-      "e": -32.4,
-      "up": 78.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 28.3,
+      "e": -24.8,
+      "up": 77.8,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hric": {
       "n": -0.7,
@@ -452,204 +452,204 @@
       "daysApprox": 90.1
     },
     "hs02": {
-      "n": 15.3,
-      "e": 39.4,
-      "up": 204,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 18.5,
+      "e": 40.1,
+      "up": 215.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "husm": {
-      "n": -26.7,
-      "e": 14.5,
-      "up": 34.5,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -19.1,
+      "e": 22,
+      "up": 15.1,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hvas": {
-      "n": -5.6,
-      "e": 23,
-      "up": 38.8,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 1.1,
+      "e": 30.7,
+      "up": 30.1,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hveh": {
-      "n": -9,
-      "e": 33.4,
-      "up": 17.3,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -2.8,
+      "e": 45.4,
+      "up": 17.1,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hver": {
-      "n": -9.4,
-      "e": 22.3,
-      "up": 6.9,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 0,
+      "e": 26.1,
+      "up": 18.8,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hvol": {
-      "n": -15.9,
-      "e": 16.8,
-      "up": 49.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -18,
+      "e": 14.5,
+      "up": -1.6,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "hvsk": {
-      "n": -9.2,
-      "e": 18.8,
-      "up": 32.2,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 2.6,
+      "e": 28,
+      "up": 28.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "insk": {
-      "n": -8,
-      "e": 14.7,
-      "up": 61,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -3.3,
+      "e": 19.8,
+      "up": 73.4,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "inta": {
-      "n": 15.4,
-      "e": 26.2,
-      "up": 38.6,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 2.8,
+      "e": 30.9,
+      "up": 47.2,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "isak": {
-      "n": 6.5,
-      "e": 25.2,
-      "up": 397.5,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 7.3,
+      "e": 22.5,
+      "up": 389.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "joku": {
-      "n": -23.8,
-      "e": 7.5,
-      "up": 68.5,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -16.4,
+      "e": 9.9,
+      "up": 84.1,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "jonc": {
-      "n": -10.1,
-      "e": 9.5,
-      "up": 22.5,
+      "n": -10,
+      "e": 11.6,
+      "up": 25.8,
       "startYear": 2026.3356,
-      "endYear": 2026.6315,
-      "daysApprox": 108.1
+      "endYear": 2026.6342,
+      "daysApprox": 109.1
     },
     "kalf": {
-      "n": -34,
-      "e": 23.6,
-      "up": 48.5,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -13.6,
+      "e": 28.2,
+      "up": 70.6,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "kasc": {
-      "n": -1.2,
-      "e": 5.8,
-      "up": 40.4,
+      "n": -4.5,
+      "e": 7.1,
+      "up": 40.6,
       "startYear": 2026.3849,
       "endYear": 2026.6315,
       "daysApprox": 90.1
     },
     "kast": {
-      "n": 6.1,
-      "e": 62.2,
-      "up": 60.8,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 4.3,
+      "e": 68.1,
+      "up": 79.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "keic": {
-      "n": -4.8,
-      "e": 15.3,
-      "up": 10.1,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -0.6,
+      "e": 24.9,
+      "up": 36.1,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "kisa": {
-      "n": 214.2,
-      "e": -28.5,
-      "up": 116.1,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 220,
+      "e": -28.3,
+      "up": 142.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "klvc": {
-      "n": -4.3,
-      "e": 22.2,
-      "up": 30.7,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -1.6,
+      "e": 17.6,
+      "up": 37.8,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "kosk": {
-      "n": -26.7,
-      "e": 24.7,
-      "up": 28.8,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -20,
+      "e": 21.1,
+      "up": 19.1,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "kriv": {
-      "n": 4.6,
-      "e": 26.3,
-      "up": 38,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 2.7,
+      "e": 37.8,
+      "up": 50.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "kvec": {
-      "n": 6,
-      "e": 48.7,
-      "up": 46.1,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 5.7,
+      "e": 53.3,
+      "up": 72.1,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "kvis": {
-      "n": -20.2,
-      "e": 20.1,
-      "up": 15,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -13.5,
+      "e": 16.1,
+      "up": 18.8,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "kvsk": {
-      "n": -26.4,
-      "e": 35.5,
-      "up": 95.3,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -26,
+      "e": 29.6,
+      "up": 83.2,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "lfel": {
-      "n": -13.1,
-      "e": 17,
-      "up": 48.6,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -5.8,
+      "e": 23.3,
+      "up": 57.6,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "lisf": {
-      "n": 29.6,
-      "e": 56.8,
-      "up": 63.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 33,
+      "e": 65.2,
+      "up": 67.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "lisk": {
       "n": 932.9,
@@ -660,52 +660,52 @@
       "daysApprox": 90.8
     },
     "mana": {
-      "n": -20.1,
-      "e": 33.5,
-      "up": 30.8,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -16.7,
+      "e": 34,
+      "up": 15.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "mofc": {
-      "n": -2.7,
-      "e": 22.4,
-      "up": 37.7,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 3.3,
+      "e": 23.7,
+      "up": 56,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "namc": {
-      "n": 42.3,
-      "e": -26.6,
-      "up": 69,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 48,
+      "e": -17.8,
+      "up": 76.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "nbio": {
-      "n": 76.6,
-      "e": -12.6,
-      "up": 143,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 90.2,
+      "e": -4.3,
+      "up": 151.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "nvel": {
-      "n": -10.5,
-      "e": 16.7,
-      "up": 24.2,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -13.7,
+      "e": 23.4,
+      "up": 27.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "nyla": {
-      "n": 5,
-      "e": 5.5,
-      "up": 44.2,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 16.4,
+      "e": 7.7,
+      "up": 41.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "oddf": {
       "n": -14.3,
@@ -716,28 +716,28 @@
       "daysApprox": 90.1
     },
     "ofel": {
-      "n": -12.4,
-      "e": 32.6,
-      "up": 69.7,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -18.9,
+      "e": 27.5,
+      "up": 85.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "olac": {
-      "n": 3.1,
-      "e": -6.1,
-      "up": -8.9,
+      "n": 1.9,
+      "e": -6.7,
+      "up": 8.6,
       "startYear": 2026.3657,
-      "endYear": 2026.6315,
-      "daysApprox": 97.1
+      "endYear": 2026.6342,
+      "daysApprox": 98.1
     },
     "orfc": {
-      "n": -57.3,
-      "e": 95.5,
-      "up": 135,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -59.8,
+      "e": 100.1,
+      "up": 157,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "rfel": {
       "n": -5.4,
@@ -748,12 +748,12 @@
       "daysApprox": 90.1
     },
     "rhof": {
-      "n": 1.5,
-      "e": 27.4,
-      "up": 44.6,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -15.1,
+      "e": 29,
+      "up": 23.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "rifc": {
       "n": 9.5,
@@ -764,20 +764,20 @@
       "daysApprox": 90.1
     },
     "rjuc": {
-      "n": 31.7,
-      "e": 10,
-      "up": 95.9,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 28.5,
+      "e": 9,
+      "up": 72.9,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "rvit": {
-      "n": -24.3,
-      "e": 46,
-      "up": 60.7,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -1.3,
+      "e": 27.8,
+      "up": 65.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "safh": {
       "n": -22.9,
@@ -788,60 +788,60 @@
       "daysApprox": 90.1
     },
     "sarp": {
-      "n": 2,
-      "e": 11,
-      "up": 35,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -8.2,
+      "e": 18.9,
+      "up": 49.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "saud": {
-      "n": -6,
-      "e": 34.5,
-      "up": 34.9,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -15.7,
+      "e": 37.1,
+      "up": 23.2,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "saur": {
-      "n": -19.2,
-      "e": 9.4,
-      "up": 28.4,
+      "n": -18,
+      "e": 9.3,
+      "up": 25.4,
       "startYear": 2026.3493,
-      "endYear": 2026.6315,
-      "daysApprox": 103.1
+      "endYear": 2026.6342,
+      "daysApprox": 104.1
     },
     "self": {
-      "n": -10.1,
-      "e": 12.9,
-      "up": 16.1,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -0.4,
+      "e": 18.2,
+      "up": 22.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "sey5": {
-      "n": -6.7,
-      "e": 20.2,
-      "up": 50.6,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -8.6,
+      "e": 26.6,
+      "up": 35.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "sifj": {
-      "n": -4.7,
-      "e": 11.7,
-      "up": 38.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -12.7,
+      "e": 23.9,
+      "up": 16.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "sjuk": {
-      "n": -19.5,
-      "e": 32,
-      "up": -0.2,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -11.5,
+      "e": 24.9,
+      "up": 12.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "skda": {
       "n": 6.6,
@@ -852,169 +852,169 @@
       "daysApprox": 90.1
     },
     "skfc": {
-      "n": -17,
-      "e": 14.8,
-      "up": 33.6,
-      "startYear": 2026.237,
-      "endYear": 2026.6315,
-      "daysApprox": 144.1
+      "n": -32,
+      "e": 28.6,
+      "up": 67.9,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "sksh": {
-      "n": -5.4,
-      "e": -11.1,
-      "up": 197.3,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 1.4,
+      "e": -4.1,
+      "up": 205,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "slec": {
-      "n": -35.7,
-      "e": 27.4,
-      "up": 86.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -37.9,
+      "e": 29.2,
+      "up": 90.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "snae": {
-      "n": -20.2,
-      "e": 21.9,
-      "up": 49.5,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -22.5,
+      "e": 21.4,
+      "up": 68.6,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "soho": {
-      "n": -27.1,
-      "e": 11.4,
-      "up": 44.7,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -23.4,
+      "e": 16.3,
+      "up": 52.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "ste2": {
-      "n": -19.1,
-      "e": 17.1,
-      "up": 46.5,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -11.4,
+      "e": 19.8,
+      "up": 35.6,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "stor": {
       "n": -0.7,
-      "e": 10.6,
-      "up": -6.6,
+      "e": 10.7,
+      "up": -2.1,
       "startYear": 2026.1877,
-      "endYear": 2026.6315,
-      "daysApprox": 162.1
+      "endYear": 2026.6342,
+      "daysApprox": 163.1
     },
     "sudv": {
-      "n": -32.4,
-      "e": 77.2,
-      "up": 85.8,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -36.4,
+      "e": 85.6,
+      "up": 101.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "svie": {
-      "n": -21.7,
-      "e": 13.7,
-      "up": 82.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -23.9,
+      "e": 20,
+      "up": 68.8,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "syrf": {
-      "n": -8.4,
-      "e": 6.3,
-      "up": 18.9,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -1.6,
+      "e": 15.5,
+      "up": 40.2,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "tanc": {
-      "n": 6.7,
-      "e": 17.3,
-      "up": 73,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 4.1,
+      "e": 25,
+      "up": 84.9,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "thob": {
-      "n": -49.6,
-      "e": 65.4,
-      "up": 185.8,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -46.5,
+      "e": 70.2,
+      "up": 198.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "thoc": {
-      "n": 3.6,
-      "e": 23.1,
-      "up": 126.5,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -2.5,
+      "e": 24.1,
+      "up": 112.7,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "undh": {
-      "n": -10.7,
-      "e": 28.1,
-      "up": 26.6,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 3.5,
+      "e": 37.8,
+      "up": 30.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "urhc": {
-      "n": 8.9,
-      "e": 18.2,
-      "up": 80.4,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 16.3,
+      "e": 26.8,
+      "up": 84.2,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "varg": {
-      "n": -29.1,
-      "e": 55.3,
-      "up": 38.8,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -24.2,
+      "e": 33.8,
+      "up": 33.3,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "vmey": {
-      "n": -10.5,
-      "e": 29.4,
-      "up": 14.9,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -2.5,
+      "e": 30.3,
+      "up": 26.5,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "vmos": {
-      "n": -78.2,
-      "e": -8.7,
-      "up": 112.9,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -69.6,
+      "e": -1.8,
+      "up": 140.2,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "vogc": {
-      "n": 8.8,
-      "e": 26.2,
-      "up": 43.7,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": 13.1,
+      "e": 31.6,
+      "up": 39.8,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "vogs": {
-      "n": 0.6,
-      "e": 30.8,
-      "up": 40,
-      "startYear": 2026.3849,
-      "endYear": 2026.6315,
-      "daysApprox": 90.1
+      "n": -2.9,
+      "e": 31.6,
+      "up": 37.1,
+      "startYear": 2026.3877,
+      "endYear": 2026.6342,
+      "daysApprox": 90
     },
     "vonc": {
-      "n": 13.4,
-      "e": -1.3,
-      "up": 78,
+      "n": 10.9,
+      "e": -0.6,
+      "up": 76.3,
       "startYear": 2026.3849,
       "endYear": 2026.6315,
       "daysApprox": 90.1
