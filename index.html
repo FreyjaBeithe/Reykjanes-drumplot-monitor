@@ -4,14 +4,19 @@
     <link rel="icon" type="image/x-icon" href="favicon[1].ico">
     <meta charset="UTF-8">
     <title>Iceland Seismic Network</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-sidebar-v2@3.2.3/css/leaflet-sidebar.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<!-- VW-042: MapLibre support for OpenFreeMap vector basemaps -->
+<link href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-sidebar-v2@3.2.3/css/leaflet-sidebar.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
         body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; background: #1a1a1a; overflow: hidden; }
         
         #map { position: absolute; top: 0; bottom: 0; left: 0; right: 0; height: 100vh; width: 100%; z-index: 1; }
-        /* Keep map background dark while tiles are loading */
+       
+    /* Keep map background dark while tiles are loading */
       #map,
 .leaflet-container,
 .leaflet-tile-pane {
