@@ -1011,7 +1011,12 @@ function setActiveMapStyleButton(layerName) {
         map.addLayer(darkRelief);
     }
 
-    const selector = document.querySelector(".map-style-selector");
+   const mapElement = document.getElementById("map");
+
+if (mapElement) {
+    mapElement.classList.toggle("soft-legend-mode", layerName !== "dark");
+}
+     const selector = document.querySelector(".map-style-selector");
 
     if (selector) {
         selector.querySelectorAll("button").forEach(function (button) {
