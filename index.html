@@ -1024,6 +1024,15 @@ if (mapElement) {
         });
     }
 }
+  function updateSoftLegendMode() {
+    const mapElement = document.getElementById("map");
+
+    if (!mapElement) return;
+
+    const darkMapIsActive = map.hasLayer(darkMode);
+
+    mapElement.classList.toggle("soft-legend-mode", !darkMapIsActive);
+}  
     // Custom visible map style selector
 const mapStyleControl = L.control({ position: 'topright' });
 
