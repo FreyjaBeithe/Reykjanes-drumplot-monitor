@@ -1184,11 +1184,18 @@ function resetMap() {
     const searchInput = document.getElementById('stationSearch');
     if (searchInput) searchInput.value = '';
     
-    // This removes every single marker from the map
-    allMarkers.forEach(marker => map.removeLayer(marker));
-    
-    // Snap back cleanly to our optimal static position
-   map.setView([64.90, -21.4], 7);
+ // This removes every single marker from the map
+allMarkers.forEach(marker => map.removeLayer(marker));
+
+// Remove earthquake controls and magnitude legend when closing the sidebar
+if (isControlVisible) {
+    map.removeControl(quakeControlInstance);
+    map.removeControl(legendInstance);
+    isControlVisible = false;
+}
+
+// Snap back cleanly to our optimal static position
+map.setView([64.90, -21.4], 7);
 
       // Revert to Satellite home map on close
     map.removeLayer(darkMode);
