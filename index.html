@@ -1040,35 +1040,40 @@ mapStyleControl.onAdd = function () {
     L.DomEvent.disableClickPropagation(div);
 
     div.querySelectorAll('button').forEach(button => {
-        button.addEventListener('click', function () {
-            const selectedLayer = this.dataset.layer;
+    button.addEventListener('click', function () {
+        const selectedLayer = this.dataset.layer;
 
-            map.removeLayer(topo);
-            map.removeLayer(darkMode);
-            map.removeLayer(satellite);
-            map.removeLayer(darkRelief);
+        map.removeLayer(topo);
+        map.removeLayer(darkMode);
+        map.removeLayer(satellite);
+        map.removeLayer(darkRelief);
 
-            if (selectedLayer === 'topo') {
-                map.addLayer(topo);
-            }
+        if (selectedLayer === 'topo') {
+            map.addLayer(topo);
+        }
 
-            if (selectedLayer === 'dark') {
-                map.addLayer(darkMode);
-            }
+        if (selectedLayer === 'dark') {
+            map.addLayer(darkMode);
+        }
 
-            if (selectedLayer === 'satellite') {
-                map.addLayer(satellite);
-            }
+        if (selectedLayer === 'satellite') {
+            map.addLayer(satellite);
+        }
 
-            if (selectedLayer === 'relief') {
-                map.addLayer(darkRelief);
-            }
+        if (selectedLayer === 'relief') {
+            map.addLayer(darkRelief);
+        }
 
-            div.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-        });
+        const mapElement = document.getElementById("map");
+
+        if (mapElement) {
+            mapElement.classList.toggle("soft-legend-mode", selectedLayer !== "dark");
+        }
+
+        div.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
     });
-
+});
     return div;
 };
 
