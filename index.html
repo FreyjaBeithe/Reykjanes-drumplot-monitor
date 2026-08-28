@@ -549,7 +549,20 @@
 #m3AlertBox input {
     margin-right: 5px;
 }      
+/* VW-042: softer magnitude legend on non-dark basemaps */
+.soft-legend-mode .quake-legend-box {
+    background: rgba(35, 90, 112, 0.88) !important;
+    border: 1px solid rgba(170, 195, 215, 0.45) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
+}
 
+.soft-legend-mode .quake-legend-box,
+.soft-legend-mode .quake-legend-box .legend-header,
+.soft-legend-mode .quake-legend-box .legend-item {
+    color: #111111 !important;
+    font-weight: 800 !important;
+}
+    
   /* ---------------------------- end of style section ------------------------------------------------------------ */   
 </style>
 </head>
