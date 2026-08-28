@@ -1077,7 +1077,12 @@ mapStyleControl.onAdd = function () {
     return div;
 };
 
-mapStyleControl.addTo(map);       
+mapStyleControl.addTo(map);   
+  const mapElement = document.getElementById("map");
+
+if (mapElement) {
+    mapElement.classList.add("soft-legend-mode");
+}  
 
 // ==========================================
 // 2. INITIALIZE SIDEBAR
