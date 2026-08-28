@@ -828,26 +828,15 @@ var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/service
 });
 
 // 
-var darkMode = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 20
+// OpenFreeMap dark basemaps - no API key required
+var darkMode = L.maplibreGL({
+    style: 'https://tiles.openfreemap.org/styles/dark'
 });
 
- // Experimental dark relief map: dark base with subtle hillshade
-var darkReliefBase = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 20
+// OpenFreeMap Fiord basemap - blue-toned dark alternative
+var darkRelief = L.maplibreGL({
+    style: 'https://tiles.openfreemap.org/styles/fiord'
 });
-
-var darkReliefShade = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Esri World Hillshade',
-    opacity: 0.10,
-    maxZoom: 16
-});
-
-var darkRelief = L.layerGroup([darkReliefBase, darkReliefShade]);       
     
 // Default to loading the satellite map first
 satellite.addTo(map);
