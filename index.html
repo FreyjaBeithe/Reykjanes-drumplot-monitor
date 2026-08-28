@@ -1090,8 +1090,18 @@ mapStyleControl.onAdd = function () {
         }
         updateSoftLegendMode();
        
-        div.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
+       map.invalidateSize();
+
+setTimeout(function () {
+    map.invalidateSize();
+}, 150);
+
+setTimeout(function () {
+    map.invalidateSize();
+}, 400);
+
+div.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+this.classList.add('active');
     });
 });
     return div;
