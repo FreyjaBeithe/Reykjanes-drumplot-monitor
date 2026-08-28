@@ -977,6 +977,7 @@ var baseMaps = {
     };
 
 L.control.layers(baseMaps).addTo(map);
+ map.on('baselayerchange', updateSoftLegendMode);   
 L.control.scale({ imperial: false, position: 'bottomleft' }).addTo(map);
 L.control.zoom({ position: 'topright' }).addTo(map);
 // Highlight the active custom map style button
@@ -1033,6 +1034,15 @@ if (mapElement) {
 
     mapElement.classList.toggle("soft-legend-mode", !darkMapIsActive);
 }  
+ function updateSoftLegendMode() {
+    const mapElement = document.getElementById("map");
+
+    if (!mapElement) return;
+
+    const darkMapIsActive = map.hasLayer(darkMode);
+
+    mapElement.classList.toggle("soft-legend-mode", !darkMapIsActive);
+}   
     // Custom visible map style selector
 const mapStyleControl = L.control({ position: 'topright' });
 
@@ -1078,7 +1088,8 @@ mapStyleControl.onAdd = function () {
         if (mapElement) {
             mapElement.classList.toggle("soft-legend-mode", selectedLayer !== "dark");
         }
-
+        updateSoftLegendMode();
+       
         div.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
         this.classList.add('active');
     });
