@@ -1097,14 +1097,11 @@ mapStyleControl.onAdd = function () {
     return div;
 };
 
-mapStyleControl.addTo(map);   
-  const mapElement = document.getElementById("map");
+mapStyleControl.addTo(map);
 
-if (mapElement) {
-    mapElement.classList.add("soft-legend-mode");
-}  
+updateSoftLegendMode();
 
-// ==========================================
+    // ==========================================
 // 2. INITIALIZE SIDEBAR
 // ==========================================
 var sidebar = L.control.sidebar({ container: 'sidebar' }).addTo(map);
